@@ -13,20 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.intellij.lang.yang.editor
 
-package com.intellij.lang.yang.editor;
+import com.intellij.openapi.fileTypes.SyntaxHighlighter
+import com.intellij.openapi.fileTypes.SyntaxHighlighterFactory
+import com.intellij.openapi.project.Project
+import com.intellij.openapi.vfs.VirtualFile
 
-import com.intellij.lang.yang.editor.YangSyntaxHighlighter;
-import com.intellij.openapi.fileTypes.SyntaxHighlighter;
-import com.intellij.openapi.fileTypes.SyntaxHighlighterFactory;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
-import org.jetbrains.annotations.NotNull;
-
-public class YangSyntaxHighlighterFactory extends SyntaxHighlighterFactory {
-    @NotNull
-    @Override
-    public SyntaxHighlighter getSyntaxHighlighter(Project project, VirtualFile virtualFile) {
-        return new YangSyntaxHighlighter();
+class YangSyntaxHighlighterFactory : SyntaxHighlighterFactory() {
+    override fun getSyntaxHighlighter(
+        project: Project?,
+        virtualFile: VirtualFile?
+    ): SyntaxHighlighter {
+        return YangSyntaxHighlighter()
     }
 }

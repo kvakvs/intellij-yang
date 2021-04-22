@@ -13,13 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.intellij.lang.yang.psi
 
-package com.intellij.lang.yang.icons;
+import com.intellij.lang.yang.YangLanguage
+import com.intellij.psi.tree.IElementType
+import org.jetbrains.annotations.NonNls
 
-import com.intellij.openapi.util.IconLoader;
-import javax.swing.*;
-
-public class YangIcons {
-    public static final Icon FILE = IconLoader.getIcon("/icons/yang-16x16.png");
-}
-
+class YangElementType(@NonNls debugName: String) :
+    IElementType(debugName, YangLanguage.INSTANCE)

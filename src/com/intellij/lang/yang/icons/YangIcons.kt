@@ -13,22 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.intellij.lang.yang.icons
 
-package com.intellij.lang.yang.psi;
+import com.intellij.openapi.util.IconLoader
 
-import com.intellij.psi.tree.IElementType;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.lang.yang.YangLanguage;
-
-public class YangTokenType extends IElementType {
-
-    public YangTokenType(@NotNull @NonNls String debugName) {
-        super(debugName, YangLanguage.INSTANCE);
-    }
-
-    @Override
-    public String toString() {
-        return "YangTokenType." + super.toString();
-    }
+object YangIcons {
+    @JvmField val FILE = IconLoader.getIcon("/icons/yang-16x16.png")
 }

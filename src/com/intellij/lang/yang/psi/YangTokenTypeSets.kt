@@ -13,18 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.intellij.lang.yang.psi
 
-package com.intellij.lang.yang.psi;
+import com.intellij.lang.yang.YangLanguage
+import com.intellij.psi.TokenType
+import com.intellij.psi.tree.IElementType
+import com.intellij.psi.tree.IFileElementType
 
-import com.intellij.psi.TokenType;
-import com.intellij.psi.tree.*;
-import com.intellij.lang.yang.YangLanguage;
-
-public interface YangTokenTypeSets {
-    IFileElementType YANG_FILE = new IFileElementType("YANGFILE", YangLanguage.INSTANCE);
-
-    IElementType WHITE_SPACE = TokenType.WHITE_SPACE;
-    IElementType BAD_CHARACTER = TokenType.BAD_CHARACTER;
-
-    static IElementType COMMENT = new YangElementType("COMMENT");
- }
+interface YangTokenTypeSets {
+    companion object {
+        val COMMENT: IElementType = YangElementType("COMMENT")
+        val YANG_FILE = IFileElementType("YANGFILE", YangLanguage.INSTANCE)
+        val WHITE_SPACE = TokenType.WHITE_SPACE
+        val BAD_CHARACTER = TokenType.BAD_CHARACTER
+    }
+}

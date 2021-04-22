@@ -14,23 +14,29 @@
   ~ limitations under the License.
   -->
 
-<idea-plugin version="2">
-  <id>org.intellij.yang</id>
-  <name>Yang Language Plugin</name>
-  <version>1.0</version>
-  <vendor email="dave@dtucker.co.uk" url="http://dtucker.co.uk">Dave Tucker</vendor>
+<idea-plugin>
+  <id>com.intellij.lang.yang</id>
+  <name>Yang Data Modeling Language</name>
+  <version>1.1</version>
+  <vendor email="dmytro.lytovchenko@gmail.com" url="">Dmytro Lytovchenko
+  </vendor>
+  <!--
+    The questions should go to the vendor above. The original author is below:
+    <vendor email="dave@dtucker.co.uk" url="http://dtucker.co.uk">Dave Tucker</vendor>
+    -->
+  <depends>com.intellij.modules.lang</depends>
 
   <description><![CDATA[
       This plugin adds support for Yang to IntelliJ
     ]]></description>
 
   <change-notes><![CDATA[
-      Nothing to report
+      Reviving the 7 year old project and trying to make it work again
     ]]>
   </change-notes>
 
   <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
-  <idea-version since-build="131"/>
+  <idea-version since-build="211"/>
 
   <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
        on how to target different products -->
@@ -39,11 +45,20 @@
   -->
 
   <extensions defaultExtensionNs="com.intellij">
-      <fileTypeFactory implementation="com.intellij.lang.yang.YangFileTypeFactory"/>
-      <lang.parserDefinition language="Yang" implementationClass="com.intellij.lang.yang.YangParserDefinition"/>
-      <lang.syntaxHighlighterFactory key="Yang" implementationClass="com.intellij.lang.yang.editor.YangSyntaxHighlighterFactory"/>
-      <colorSettingsPage implementation="com.intellij.lang.yang.editor.YangColorSettingsPage"/>
-      <completion.contributor language="Yang" implementationClass="com.intellij.lang.yang.YangCompletionContributor"/>
+    <!--      <fileTypeFactory implementation="com.intellij.lang.yang.YangFileTypeFactory"/>-->
+    <fileType name="Yang File"
+              implementationClass="com.intellij.lang.yang.YangFileType"
+              fieldName="INSTANCE"
+              language="Yang"
+              extensions="yang"/>
+    <lang.parserDefinition language="Yang"
+                           implementationClass="com.intellij.lang.yang.YangParserDefinition"/>
+    <lang.syntaxHighlighterFactory key="Yang"
+                                   implementationClass="com.intellij.lang.yang.editor.YangSyntaxHighlighterFactory"/>
+    <colorSettingsPage
+            implementation="com.intellij.lang.yang.editor.YangColorSettingsPage"/>
+    <completion.contributor language="Yang"
+                            implementationClass="com.intellij.lang.yang.YangCompletionContributor"/>
   </extensions>
 
   <application-components>

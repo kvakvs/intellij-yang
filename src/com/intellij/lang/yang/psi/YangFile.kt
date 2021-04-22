@@ -13,16 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.intellij.lang.yang.psi
 
-package com.intellij.lang.yang.psi;
+import com.intellij.extapi.psi.PsiFileBase
+import com.intellij.lang.yang.YangFileType
+import com.intellij.lang.yang.YangLanguage
+import com.intellij.openapi.fileTypes.FileType
+import com.intellij.psi.FileViewProvider
 
-import com.intellij.psi.tree.IElementType;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.lang.yang.YangLanguage;
+class YangFile(viewProvider: FileViewProvider) :
+    PsiFileBase(viewProvider, YangLanguage.INSTANCE) {
+    override fun getFileType(): FileType {
+        return YangFileType.INSTANCE
+    }
 
-public class YangElementType extends IElementType{
-    public YangElementType(@NotNull @NonNls String debugName) {
-        super(debugName, YangLanguage.INSTANCE);
+    override fun toString(): String {
+        return "Yang File"
     }
 }

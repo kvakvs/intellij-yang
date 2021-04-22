@@ -13,17 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.intellij.lang.yang.psi
 
-package com.intellij.lang.yang;
+import com.intellij.lang.yang.YangLanguage
+import com.intellij.psi.tree.IElementType
+import org.jetbrains.annotations.NonNls
 
-import com.intellij.openapi.fileTypes.FileTypeConsumer;
-import com.intellij.openapi.fileTypes.FileTypeFactory;
-import org.jetbrains.annotations.NotNull;
-
-public class YangFileTypeFactory extends FileTypeFactory {
-
-    @Override
-    public void createFileTypes(@NotNull FileTypeConsumer fileTypeConsumer) {
-        fileTypeConsumer.consume(YangFileType.INSTANCE, "yang");
+class YangTokenType(@NonNls debugName: String) :
+    IElementType(debugName, YangLanguage.INSTANCE) {
+    override fun toString(): String {
+        return "YangTokenType." + super.toString()
     }
 }
