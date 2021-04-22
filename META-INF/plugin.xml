@@ -15,7 +15,7 @@
   -->
 
 <idea-plugin>
-  <id>com.intellij.lang.yang</id>
+  <id>se.clau.yang</id>
   <name>Yang Data Modeling Language</name>
   <version>1.1</version>
   <vendor email="dmytro.lytovchenko@gmail.com" url="">Dmytro Lytovchenko
@@ -45,33 +45,25 @@
   -->
 
   <extensions defaultExtensionNs="com.intellij">
-    <!--      <fileTypeFactory implementation="com.intellij.lang.yang.YangFileTypeFactory"/>-->
     <fileType name="Yang File"
-              implementationClass="com.intellij.lang.yang.YangFileType"
+              implementationClass="se.clau.yang.YangFileType"
               fieldName="INSTANCE"
               language="Yang"
               extensions="yang"/>
-    <lang.parserDefinition language="Yang"
-                           implementationClass="com.intellij.lang.yang.YangParserDefinition"/>
-    <lang.syntaxHighlighterFactory key="Yang"
-                                   implementationClass="com.intellij.lang.yang.editor.YangSyntaxHighlighterFactory"/>
+    <lang.parserDefinition
+            language="Yang"
+            implementationClass="se.clau.yang.YangParserDefinition"/>
+    <lang.syntaxHighlighterFactory
+            language="Yang"
+            implementationClass="se.clau.yang.editor.YangSyntaxHighlighterFactory"/>
     <colorSettingsPage
-            implementation="com.intellij.lang.yang.editor.YangColorSettingsPage"/>
-    <completion.contributor language="Yang"
-                            implementationClass="com.intellij.lang.yang.YangCompletionContributor"/>
+            implementation="se.clau.yang.editor.YangColorSettingsPage"/>
+    <completion.contributor
+            language="Yang"
+            implementationClass="se.clau.yang.YangCompletionContributor"/>
   </extensions>
-
-  <application-components>
-    <!-- Add your application components here -->
-  </application-components>
-
-  <project-components>
-    <!-- Add your project components here -->
-  </project-components>
 
   <actions>
     <!-- Add your actions here -->
   </actions>
-
-
 </idea-plugin>

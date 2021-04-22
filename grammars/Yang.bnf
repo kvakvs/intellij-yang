@@ -1,17 +1,17 @@
 {
-  parserClass="com.intellij.lang.yang.parser.YangParser"
+  parserClass="se.clau.yang.parser.YangParser"
 
   extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
 
   psiClassPrefix="Yang"
   psiImplClassSuffix="Impl"
-  psiPackage="com.intellij.lang.psi"
-  psiImplPackage="com.intellij.lang.psi.impl"
+  psiPackage="se.clau.yang.psi"
+  psiImplPackage="se.clau.yang.psi.impl"
 
-  elementTypeHolderClass="com.intellij.lang.yang.psi.YangTypes"
+  elementTypeHolderClass="se.clau.yang.psi.YangTypes"
   elementTypePrefix="YANG_"
-  elementTypeClass="com.intellij.lang.yang.psi.YangElementType"
-  tokenTypeClass="com.intellij.lang.yang.psi.YangTokenType"
+  elementTypeClass="se.clau.yang.psi.YangElementType"
+  tokenTypeClass="se.clau.yang.psi.YangTokenType"
 
 }
 
