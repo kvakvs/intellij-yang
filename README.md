@@ -1,7 +1,9 @@
 intellij-yang
 =============
 
-This IntelliJ Plugin adds support for Yang.
+This IntelliJ Plugin adds support for Yang Data Modeling Language for the definition of data sent over the network by NETCONF,
+RESTCONF management protocols and such. Yang is described in RFC-6020 (version 1.0, 2010) and RFC-7950 (version 1.1, 2016).
+See https://en.wikipedia.org/wiki/YANG
 
 # Features
 
