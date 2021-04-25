@@ -26,15 +26,15 @@
   <depends>com.intellij.modules.lang</depends>
 
   <description><![CDATA[
-    This IntelliJ Plugin adds support for Yang Data Modeling Language for the definition of data sent
+    This IntelliJ Plugin adds support for Yang Data Modeling Language version 1.0 for the definition of data sent
     over the network by NETCONF, RESTCONF management protocols and such. Yang is described in RFC-6020
     (version 1.0, 2010) and RFC-7950 (version 1.1, 2016). See https://en.wikipedia.org/wiki/YANG
 
-    The plugin adds syntax highlighting and simple code completion.
+    The plugin adds syntax highlighting for Yang 1.0 and simple code completion.
     ]]></description>
 
   <change-notes><![CDATA[
-      Reviving the 7 year old project
+    Reviving the 7 year old project. Supports Yang 1.0.
     ]]>
   </change-notes>
 
