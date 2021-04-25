@@ -17,6 +17,12 @@ public interface YangDataDefStmt extends PsiElement {
   YangContainerStmt getContainerStmt();
 
   @Nullable
+  YangDescriptionStmt getDescriptionStmt();
+
+  @Nullable
+  YangImportStmt getImportStmt();
+
+  @Nullable
   YangLeafListStmt getLeafListStmt();
 
   @Nullable
@@ -24,6 +30,15 @@ public interface YangDataDefStmt extends PsiElement {
 
   @Nullable
   YangListStmt getListStmt();
+
+  @Nullable
+  YangOrganizationStmt getOrganizationStmt();
+
+  @Nullable
+  YangRevisionStmt getRevisionStmt();
+
+  @Nullable
+  YangTypedefStmt getTypedefStmt();
 
   @Nullable
   YangUsesStmt getUsesStmt();

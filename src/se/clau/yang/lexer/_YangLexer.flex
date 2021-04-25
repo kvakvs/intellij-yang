@@ -37,28 +37,42 @@ import se.clau.yang.psi.YangTypes;
 
 LineTerminator = \r|\n|\r\n
 InputCharacter = [^\r\n]
-WhiteSpace = {LineTerminator} | [ \t\f]
+WhiteSpace     = {LineTerminator} | [ \t\f]
 
-Comment = {TraditionalComment} | {EndOfLineComment} | {DocumentationComment}
+Comment              = {TraditionalComment} | {EndOfLineComment} | {DocumentationComment}
 TraditionalComment   = "/*" [^*] ~"*/" | "/*" "*"+ "/"
 EndOfLineComment     = "//" {InputCharacter}* {LineTerminator}
 DocumentationComment = "/**" {CommentContent} "*"+ "/"
 CommentContent       = ( [^*] | \*+ [^/*] )*
 
+PLUS          = "+"
+ESC           = "\\"[^ ]
+CHAR          = {ESC} | [^\'\"\\]
 
-ESC = "\\"[^ ]
-CHAR = {ESC} | [^\'\"\\]
-STRING_BAD1 = \" ({CHAR} | \') *
-StringLiteral = {STRING_BAD1} \" | {Identifier}
+//--- String literals wrapped in double quotes
+STRING_BAD1   = \" ({CHAR} | \') *
+StringLiteral1 = {STRING_BAD1} \" | {Identifier}
 
-Identifier = [/.a-zA-Z_0-9\-][a-zA-Z0-9_\-.:]*
+//--- String literals wrapped in double quotes
+STRING_BAD2    = \' ({CHAR} | \") *
+StringLiteral2 = {STRING_BAD2} \' | {Identifier}
+
+// A string can be either double or single quoted
+StringLiteral_Either = {StringLiteral1} | {StringLiteral2}
+
+// A string can be split into multiple fragments separated by a +
+StringLiteral = {StringLiteral_Either} ({PLUS} {StringLiteral_Either}) *
+
+Identifier_Start = [/.a-zA-Z_0-9\-]
+Identifier_Body  = [a-zA-Z0-9_\-.:] *
+Identifier       = {Identifier_Start} {Identifier_Body}
 
 %state VALUE_MODE
 
 %%
 <YYINITIAL> {
   ";"                     { return YangTypes.YANG_SEMICOLON; }
-  "+"                     { return YangTypes.YANG_PLUS; }
+  {PLUS}                  { return YangTypes.YANG_PLUS; }
   "{"                     { return YangTypes.YANG_LEFT_BRACE; }
   "}"                     { return YangTypes.YANG_RIGHT_BRACE; }
   "anyxml"                { yybegin(VALUE_MODE); return YangTypes.YANG_ANYXML_KEYWORD; }
@@ -151,7 +165,7 @@ Identifier = [/.a-zA-Z_0-9\-][a-zA-Z0-9_\-.:]*
 
 <VALUE_MODE> {
 
-  /* string literal */
+  // string literals: with double quotes, and single quotes
   {StringLiteral}         { return YangTypes.YANG_STRING_LITERAL; }
 
   // Treat comments as White Space
@@ -160,6 +174,7 @@ Identifier = [/.a-zA-Z_0-9\-][a-zA-Z0-9_\-.:]*
 
   ";"                     { yybegin(YYINITIAL); return YangTypes.YANG_SEMICOLON; }
   "{"                     { yybegin(YYINITIAL); return YangTypes.YANG_LEFT_BRACE; }
+  {PLUS}                  { return YangTypes.YANG_PLUS; } // allow plus to concat strings
 
 }
 

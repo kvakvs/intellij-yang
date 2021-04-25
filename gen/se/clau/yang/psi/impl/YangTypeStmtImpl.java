@@ -34,9 +34,9 @@ public class YangTypeStmtImpl extends ASTWrapperPsiElement implements YangTypeSt
   }
 
   @Override
-  @Nullable
-  public YangTypeBodyStmts getTypeBodyStmts() {
-    return findChildByClass(YangTypeBodyStmts.class);
+  @NotNull
+  public List<YangTypeBodyStmts> getTypeBodyStmtsList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, YangTypeBodyStmts.class);
   }
 
 }

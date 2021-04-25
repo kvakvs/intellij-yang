@@ -28,9 +28,9 @@ public class YangInstanceIdentifierSpecificationImpl extends ASTWrapperPsiElemen
   }
 
   @Override
-  @Nullable
+  @NotNull
   public YangRequireInstanceStmt getRequireInstanceStmt() {
-    return findChildByClass(YangRequireInstanceStmt.class);
+    return findNotNullChildByClass(YangRequireInstanceStmt.class);
   }
 
 }
