@@ -184,6 +184,7 @@ public interface YangTypes {
   IElementType YANG_TYPE_KEYWORD = new YangTokenType("TYPE_KEYWORD");
   IElementType YANG_UNIQUE_KEYWORD = new YangTokenType("UNIQUE_KEYWORD");
   IElementType YANG_UNITS_KEYWORD = new YangTokenType("UNITS_KEYWORD");
+  IElementType YANG_UNQUOTED_STRING = new YangTokenType("UNQUOTED_STRING");
   IElementType YANG_USES_KEYWORD = new YangTokenType("USES_KEYWORD");
   IElementType YANG_VALUE_KEYWORD = new YangTokenType("VALUE_KEYWORD");
   IElementType YANG_WHEN_KEYWORD = new YangTokenType("WHEN_KEYWORD");

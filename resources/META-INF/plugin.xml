@@ -34,7 +34,10 @@
     ]]></description>
 
   <change-notes><![CDATA[
-    Reviving the 7 year old project. Supports Yang 1.0.
+    <ul>
+      <li> Parser updated with some Yang 1.1 features
+      <li> Reviving the 7 year old project. Supports Yang 1.0.
+    </ul>
     ]]>
   </change-notes>
 

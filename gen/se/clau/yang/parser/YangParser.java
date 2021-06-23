@@ -379,7 +379,9 @@ public class YangParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // CASE_KEYWORD string (SEMICOLON | (LEFT_BRACE  (identifier_stmt |when_stmt | if_feature_stmt | status_stmt | description_stmt | reference_stmt | data_def_stmt )* RIGHT_BRACE))
+  // CASE_KEYWORD string (SEMICOLON | (LEFT_BRACE
+  //     (identifier_stmt | when_stmt | if_feature_stmt | status_stmt | description_stmt
+  //     | reference_stmt | data_def_stmt )* RIGHT_BRACE))
   public static boolean case_stmt(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "case_stmt")) return false;
     if (!nextTokenIs(b, YANG_CASE_KEYWORD)) return false;
@@ -392,7 +394,9 @@ public class YangParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // SEMICOLON | (LEFT_BRACE  (identifier_stmt |when_stmt | if_feature_stmt | status_stmt | description_stmt | reference_stmt | data_def_stmt )* RIGHT_BRACE)
+  // SEMICOLON | (LEFT_BRACE
+  //     (identifier_stmt | when_stmt | if_feature_stmt | status_stmt | description_stmt
+  //     | reference_stmt | data_def_stmt )* RIGHT_BRACE)
   private static boolean case_stmt_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "case_stmt_2")) return false;
     boolean r;
@@ -403,7 +407,9 @@ public class YangParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // LEFT_BRACE  (identifier_stmt |when_stmt | if_feature_stmt | status_stmt | description_stmt | reference_stmt | data_def_stmt )* RIGHT_BRACE
+  // LEFT_BRACE
+  //     (identifier_stmt | when_stmt | if_feature_stmt | status_stmt | description_stmt
+  //     | reference_stmt | data_def_stmt )* RIGHT_BRACE
   private static boolean case_stmt_2_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "case_stmt_2_1")) return false;
     boolean r;
@@ -415,7 +421,8 @@ public class YangParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // (identifier_stmt |when_stmt | if_feature_stmt | status_stmt | description_stmt | reference_stmt | data_def_stmt )*
+  // (identifier_stmt | when_stmt | if_feature_stmt | status_stmt | description_stmt
+  //     | reference_stmt | data_def_stmt )*
   private static boolean case_stmt_2_1_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "case_stmt_2_1_1")) return false;
     while (true) {
@@ -426,7 +433,8 @@ public class YangParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // identifier_stmt |when_stmt | if_feature_stmt | status_stmt | description_stmt | reference_stmt | data_def_stmt
+  // identifier_stmt | when_stmt | if_feature_stmt | status_stmt | description_stmt
+  //     | reference_stmt | data_def_stmt
   private static boolean case_stmt_2_1_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "case_stmt_2_1_1_0")) return false;
     boolean r;
@@ -441,7 +449,10 @@ public class YangParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // CHOICE_KEYWORD string (SEMICOLON | (LEFT_BRACE  (identifier_stmt |when_stmt | if_feature_stmt | default_stmt | config_stmt | mandatory_stmt | status_stmt | description_stmt | reference_stmt | short_case_stmt | case_stmt)* RIGHT_BRACE))
+  // CHOICE_KEYWORD string (SEMICOLON | (LEFT_BRACE
+  //     (identifier_stmt |when_stmt | if_feature_stmt | default_stmt | config_stmt
+  //     | mandatory_stmt | status_stmt | description_stmt | reference_stmt | short_case_stmt
+  //     | case_stmt)* RIGHT_BRACE))
   public static boolean choice_stmt(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "choice_stmt")) return false;
     if (!nextTokenIs(b, YANG_CHOICE_KEYWORD)) return false;
@@ -454,7 +465,10 @@ public class YangParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // SEMICOLON | (LEFT_BRACE  (identifier_stmt |when_stmt | if_feature_stmt | default_stmt | config_stmt | mandatory_stmt | status_stmt | description_stmt | reference_stmt | short_case_stmt | case_stmt)* RIGHT_BRACE)
+  // SEMICOLON | (LEFT_BRACE
+  //     (identifier_stmt |when_stmt | if_feature_stmt | default_stmt | config_stmt
+  //     | mandatory_stmt | status_stmt | description_stmt | reference_stmt | short_case_stmt
+  //     | case_stmt)* RIGHT_BRACE)
   private static boolean choice_stmt_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "choice_stmt_2")) return false;
     boolean r;
@@ -465,7 +479,10 @@ public class YangParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // LEFT_BRACE  (identifier_stmt |when_stmt | if_feature_stmt | default_stmt | config_stmt | mandatory_stmt | status_stmt | description_stmt | reference_stmt | short_case_stmt | case_stmt)* RIGHT_BRACE
+  // LEFT_BRACE
+  //     (identifier_stmt |when_stmt | if_feature_stmt | default_stmt | config_stmt
+  //     | mandatory_stmt | status_stmt | description_stmt | reference_stmt | short_case_stmt
+  //     | case_stmt)* RIGHT_BRACE
   private static boolean choice_stmt_2_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "choice_stmt_2_1")) return false;
     boolean r;
@@ -477,7 +494,9 @@ public class YangParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // (identifier_stmt |when_stmt | if_feature_stmt | default_stmt | config_stmt | mandatory_stmt | status_stmt | description_stmt | reference_stmt | short_case_stmt | case_stmt)*
+  // (identifier_stmt |when_stmt | if_feature_stmt | default_stmt | config_stmt
+  //     | mandatory_stmt | status_stmt | description_stmt | reference_stmt | short_case_stmt
+  //     | case_stmt)*
   private static boolean choice_stmt_2_1_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "choice_stmt_2_1_1")) return false;
     while (true) {
@@ -488,7 +507,9 @@ public class YangParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // identifier_stmt |when_stmt | if_feature_stmt | default_stmt | config_stmt | mandatory_stmt | status_stmt | description_stmt | reference_stmt | short_case_stmt | case_stmt
+  // identifier_stmt |when_stmt | if_feature_stmt | default_stmt | config_stmt
+  //     | mandatory_stmt | status_stmt | description_stmt | reference_stmt | short_case_stmt
+  //     | case_stmt
   private static boolean choice_stmt_2_1_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "choice_stmt_2_1_1_0")) return false;
     boolean r;
@@ -510,11 +531,11 @@ public class YangParser implements PsiParser, LightPsiParser {
   // string
   public static boolean config_arg(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "config_arg")) return false;
-    if (!nextTokenIs(b, YANG_STRING_LITERAL)) return false;
+    if (!nextTokenIs(b, "<config arg>", YANG_STRING_LITERAL, YANG_UNQUOTED_STRING)) return false;
     boolean r;
-    Marker m = enter_section_(b);
+    Marker m = enter_section_(b, l, _NONE_, YANG_CONFIG_ARG, "<config arg>");
     r = string(b, l + 1);
-    exit_section_(b, m, YANG_CONFIG_ARG, r);
+    exit_section_(b, l, m, r, false, null);
     return r;
   }
 
@@ -1904,11 +1925,11 @@ public class YangParser implements PsiParser, LightPsiParser {
   // string
   public static boolean mandatory_arg(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "mandatory_arg")) return false;
-    if (!nextTokenIs(b, YANG_STRING_LITERAL)) return false;
+    if (!nextTokenIs(b, "<mandatory arg>", YANG_STRING_LITERAL, YANG_UNQUOTED_STRING)) return false;
     boolean r;
-    Marker m = enter_section_(b);
+    Marker m = enter_section_(b, l, _NONE_, YANG_MANDATORY_ARG, "<mandatory arg>");
     r = string(b, l + 1);
-    exit_section_(b, m, YANG_MANDATORY_ARG, r);
+    exit_section_(b, l, m, r, false, null);
     return r;
   }
 
@@ -1944,11 +1965,11 @@ public class YangParser implements PsiParser, LightPsiParser {
   // string
   public static boolean max_value_arg(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "max_value_arg")) return false;
-    if (!nextTokenIs(b, YANG_STRING_LITERAL)) return false;
+    if (!nextTokenIs(b, "<max value arg>", YANG_STRING_LITERAL, YANG_UNQUOTED_STRING)) return false;
     boolean r;
-    Marker m = enter_section_(b);
+    Marker m = enter_section_(b, l, _NONE_, YANG_MAX_VALUE_ARG, "<max value arg>");
     r = string(b, l + 1);
-    exit_section_(b, m, YANG_MAX_VALUE_ARG, r);
+    exit_section_(b, l, m, r, false, null);
     return r;
   }
 
@@ -1995,11 +2016,11 @@ public class YangParser implements PsiParser, LightPsiParser {
   // string
   public static boolean min_value_arg(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "min_value_arg")) return false;
-    if (!nextTokenIs(b, YANG_STRING_LITERAL)) return false;
+    if (!nextTokenIs(b, "<min value arg>", YANG_STRING_LITERAL, YANG_UNQUOTED_STRING)) return false;
     boolean r;
-    Marker m = enter_section_(b);
+    Marker m = enter_section_(b, l, _NONE_, YANG_MIN_VALUE_ARG, "<min value arg>");
     r = string(b, l + 1);
-    exit_section_(b, m, YANG_MIN_VALUE_ARG, r);
+    exit_section_(b, l, m, r, false, null);
     return r;
   }
 
@@ -2204,11 +2225,11 @@ public class YangParser implements PsiParser, LightPsiParser {
   // string
   public static boolean ordered_by_arg(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "ordered_by_arg")) return false;
-    if (!nextTokenIs(b, YANG_STRING_LITERAL)) return false;
+    if (!nextTokenIs(b, "<ordered by arg>", YANG_STRING_LITERAL, YANG_UNQUOTED_STRING)) return false;
     boolean r;
-    Marker m = enter_section_(b);
+    Marker m = enter_section_(b, l, _NONE_, YANG_ORDERED_BY_ARG, "<ordered by arg>");
     r = string(b, l + 1);
-    exit_section_(b, m, YANG_ORDERED_BY_ARG, r);
+    exit_section_(b, l, m, r, false, null);
     return r;
   }
 
@@ -2467,7 +2488,8 @@ public class YangParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // (identifier_stmt |must_stmt | config_stmt | mandatory_stmt | description_stmt | reference_stmt )*
+  // (identifier_stmt |must_stmt | config_stmt
+  //     | mandatory_stmt | description_stmt | reference_stmt )*
   public static boolean refine_anyxml_stmts(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "refine_anyxml_stmts")) return false;
     Marker m = enter_section_(b, l, _NONE_, YANG_REFINE_ANYXML_STMTS, "<refine anyxml stmts>");
@@ -2480,7 +2502,8 @@ public class YangParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // identifier_stmt |must_stmt | config_stmt | mandatory_stmt | description_stmt | reference_stmt
+  // identifier_stmt |must_stmt | config_stmt
+  //     | mandatory_stmt | description_stmt | reference_stmt
   private static boolean refine_anyxml_stmts_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "refine_anyxml_stmts_0")) return false;
     boolean r;
@@ -2494,17 +2517,19 @@ public class YangParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // (identifier_stmt | description_stmt | reference_stmt )*
+  // (identifier_stmt | description_stmt | reference_stmt )+
   public static boolean refine_case_stmts(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "refine_case_stmts")) return false;
+    boolean r;
     Marker m = enter_section_(b, l, _NONE_, YANG_REFINE_CASE_STMTS, "<refine case stmts>");
-    while (true) {
+    r = refine_case_stmts_0(b, l + 1);
+    while (r) {
       int c = current_position_(b);
       if (!refine_case_stmts_0(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "refine_case_stmts", c)) break;
     }
-    exit_section_(b, l, m, true, false, null);
-    return true;
+    exit_section_(b, l, m, r, false, null);
+    return r;
   }
 
   // identifier_stmt | description_stmt | reference_stmt
@@ -2518,20 +2543,24 @@ public class YangParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // (identifier_stmt | default_stmt | config_stmt | mandatory_stmt | description_stmt | reference_stmt )*
+  // (identifier_stmt | default_stmt | config_stmt
+  //     | mandatory_stmt | description_stmt | reference_stmt )+
   public static boolean refine_choice_stmts(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "refine_choice_stmts")) return false;
+    boolean r;
     Marker m = enter_section_(b, l, _NONE_, YANG_REFINE_CHOICE_STMTS, "<refine choice stmts>");
-    while (true) {
+    r = refine_choice_stmts_0(b, l + 1);
+    while (r) {
       int c = current_position_(b);
       if (!refine_choice_stmts_0(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "refine_choice_stmts", c)) break;
     }
-    exit_section_(b, l, m, true, false, null);
-    return true;
+    exit_section_(b, l, m, r, false, null);
+    return r;
   }
 
-  // identifier_stmt | default_stmt | config_stmt | mandatory_stmt | description_stmt | reference_stmt
+  // identifier_stmt | default_stmt | config_stmt
+  //     | mandatory_stmt | description_stmt | reference_stmt
   private static boolean refine_choice_stmts_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "refine_choice_stmts_0")) return false;
     boolean r;
@@ -2545,20 +2574,24 @@ public class YangParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // (identifier_stmt | must_stmt | presence_stmt | config_stmt | description_stmt | reference_stmt )*
+  // (identifier_stmt | must_stmt | presence_stmt
+  //     | config_stmt | description_stmt | reference_stmt )+
   public static boolean refine_container_stmts(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "refine_container_stmts")) return false;
+    boolean r;
     Marker m = enter_section_(b, l, _NONE_, YANG_REFINE_CONTAINER_STMTS, "<refine container stmts>");
-    while (true) {
+    r = refine_container_stmts_0(b, l + 1);
+    while (r) {
       int c = current_position_(b);
       if (!refine_container_stmts_0(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "refine_container_stmts", c)) break;
     }
-    exit_section_(b, l, m, true, false, null);
-    return true;
+    exit_section_(b, l, m, r, false, null);
+    return r;
   }
 
-  // identifier_stmt | must_stmt | presence_stmt | config_stmt | description_stmt | reference_stmt
+  // identifier_stmt | must_stmt | presence_stmt
+  //     | config_stmt | description_stmt | reference_stmt
   private static boolean refine_container_stmts_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "refine_container_stmts_0")) return false;
     boolean r;
@@ -2572,20 +2605,24 @@ public class YangParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // (identifier_stmt | must_stmt | config_stmt | min_elements_stmt | max_elements_stmt | description_stmt | reference_stmt )*
+  // (identifier_stmt | must_stmt | config_stmt
+  //     | min_elements_stmt | max_elements_stmt | description_stmt | reference_stmt )+
   public static boolean refine_leaf_list_stmts(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "refine_leaf_list_stmts")) return false;
+    boolean r;
     Marker m = enter_section_(b, l, _NONE_, YANG_REFINE_LEAF_LIST_STMTS, "<refine leaf list stmts>");
-    while (true) {
+    r = refine_leaf_list_stmts_0(b, l + 1);
+    while (r) {
       int c = current_position_(b);
       if (!refine_leaf_list_stmts_0(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "refine_leaf_list_stmts", c)) break;
     }
-    exit_section_(b, l, m, true, false, null);
-    return true;
+    exit_section_(b, l, m, r, false, null);
+    return r;
   }
 
-  // identifier_stmt | must_stmt | config_stmt | min_elements_stmt | max_elements_stmt | description_stmt | reference_stmt
+  // identifier_stmt | must_stmt | config_stmt
+  //     | min_elements_stmt | max_elements_stmt | description_stmt | reference_stmt
   private static boolean refine_leaf_list_stmts_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "refine_leaf_list_stmts_0")) return false;
     boolean r;
@@ -2600,20 +2637,24 @@ public class YangParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // (identifier_stmt | must_stmt | default_stmt | config_stmt | mandatory_stmt | description_stmt | reference_stmt )*
+  // (identifier_stmt | must_stmt | default_stmt | config_stmt
+  //     | mandatory_stmt | description_stmt | reference_stmt )+
   public static boolean refine_leaf_stmts(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "refine_leaf_stmts")) return false;
+    boolean r;
     Marker m = enter_section_(b, l, _NONE_, YANG_REFINE_LEAF_STMTS, "<refine leaf stmts>");
-    while (true) {
+    r = refine_leaf_stmts_0(b, l + 1);
+    while (r) {
       int c = current_position_(b);
       if (!refine_leaf_stmts_0(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "refine_leaf_stmts", c)) break;
     }
-    exit_section_(b, l, m, true, false, null);
-    return true;
+    exit_section_(b, l, m, r, false, null);
+    return r;
   }
 
-  // identifier_stmt | must_stmt | default_stmt | config_stmt | mandatory_stmt | description_stmt | reference_stmt
+  // identifier_stmt | must_stmt | default_stmt | config_stmt
+  //     | mandatory_stmt | description_stmt | reference_stmt
   private static boolean refine_leaf_stmts_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "refine_leaf_stmts_0")) return false;
     boolean r;
@@ -2628,20 +2669,24 @@ public class YangParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // (identifier_stmt | must_stmt | config_stmt | min_elements_stmt | max_elements_stmt | description_stmt | reference_stmt )*
+  // (identifier_stmt | must_stmt | config_stmt
+  //     | min_elements_stmt | max_elements_stmt | description_stmt | reference_stmt )+
   public static boolean refine_list_stmts(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "refine_list_stmts")) return false;
+    boolean r;
     Marker m = enter_section_(b, l, _NONE_, YANG_REFINE_LIST_STMTS, "<refine list stmts>");
-    while (true) {
+    r = refine_list_stmts_0(b, l + 1);
+    while (r) {
       int c = current_position_(b);
       if (!refine_list_stmts_0(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "refine_list_stmts", c)) break;
     }
-    exit_section_(b, l, m, true, false, null);
-    return true;
+    exit_section_(b, l, m, r, false, null);
+    return r;
   }
 
-  // identifier_stmt | must_stmt | config_stmt | min_elements_stmt | max_elements_stmt | description_stmt | reference_stmt
+  // identifier_stmt | must_stmt | config_stmt
+  //     | min_elements_stmt | max_elements_stmt | description_stmt | reference_stmt
   private static boolean refine_list_stmts_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "refine_list_stmts_0")) return false;
     boolean r;
@@ -2656,7 +2701,9 @@ public class YangParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // refine_container_stmts | refine_leaf_stmts | refine_leaf_list_stmts | refine_list_stmts | refine_choice_stmts | refine_case_stmts | refine_anyxml_stmts
+  // refine_container_stmts | refine_leaf_stmts | refine_leaf_list_stmts
+  //     | refine_list_stmts | refine_choice_stmts | refine_case_stmts
+  //     | refine_anyxml_stmts
   public static boolean refine_pom(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "refine_pom")) return false;
     boolean r;
@@ -2723,11 +2770,11 @@ public class YangParser implements PsiParser, LightPsiParser {
   // string
   public static boolean require_instance_arg(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "require_instance_arg")) return false;
-    if (!nextTokenIs(b, YANG_STRING_LITERAL)) return false;
+    if (!nextTokenIs(b, "<require instance arg>", YANG_STRING_LITERAL, YANG_UNQUOTED_STRING)) return false;
     boolean r;
-    Marker m = enter_section_(b);
+    Marker m = enter_section_(b, l, _NONE_, YANG_REQUIRE_INSTANCE_ARG, "<require instance arg>");
     r = string(b, l + 1);
-    exit_section_(b, m, YANG_REQUIRE_INSTANCE_ARG, r);
+    exit_section_(b, l, m, r, false, null);
     return r;
   }
 
@@ -2938,11 +2985,11 @@ public class YangParser implements PsiParser, LightPsiParser {
   // string
   public static boolean status_arg(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "status_arg")) return false;
-    if (!nextTokenIs(b, YANG_STRING_LITERAL)) return false;
+    if (!nextTokenIs(b, "<status arg>", YANG_STRING_LITERAL, YANG_UNQUOTED_STRING)) return false;
     boolean r;
-    Marker m = enter_section_(b);
+    Marker m = enter_section_(b, l, _NONE_, YANG_STATUS_ARG, "<status arg>");
     r = string(b, l + 1);
-    exit_section_(b, m, YANG_STATUS_ARG, r);
+    exit_section_(b, l, m, r, false, null);
     return r;
   }
 
@@ -2993,19 +3040,19 @@ public class YangParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // STRING_LITERAL (PLUS STRING_LITERAL)*
+  // string_piece (PLUS string_piece)*
   public static boolean string(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "string")) return false;
-    if (!nextTokenIs(b, YANG_STRING_LITERAL)) return false;
+    if (!nextTokenIs(b, "<string>", YANG_STRING_LITERAL, YANG_UNQUOTED_STRING)) return false;
     boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, YANG_STRING_LITERAL);
+    Marker m = enter_section_(b, l, _NONE_, YANG_STRING, "<string>");
+    r = string_piece(b, l + 1);
     r = r && string_1(b, l + 1);
-    exit_section_(b, m, YANG_STRING, r);
+    exit_section_(b, l, m, r, false, null);
     return r;
   }
 
-  // (PLUS STRING_LITERAL)*
+  // (PLUS string_piece)*
   private static boolean string_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "string_1")) return false;
     while (true) {
@@ -3016,13 +3063,25 @@ public class YangParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // PLUS STRING_LITERAL
+  // PLUS string_piece
   private static boolean string_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "string_1_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, YANG_PLUS, YANG_STRING_LITERAL);
+    r = consumeToken(b, YANG_PLUS);
+    r = r && string_piece(b, l + 1);
     exit_section_(b, m, null, r);
+    return r;
+  }
+
+  /* ********************************************************** */
+  // STRING_LITERAL | UNQUOTED_STRING
+  static boolean string_piece(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "string_piece")) return false;
+    if (!nextTokenIs(b, "", YANG_STRING_LITERAL, YANG_UNQUOTED_STRING)) return false;
+    boolean r;
+    r = consumeToken(b, YANG_STRING_LITERAL);
+    if (!r) r = consumeToken(b, YANG_UNQUOTED_STRING);
     return r;
   }
 
@@ -3104,7 +3163,7 @@ public class YangParser implements PsiParser, LightPsiParser {
   // (identifier_stmt)* (
   //     numerical_restrictions | string_restrictions | enum_specification | leafref_specification
   //     | identityref_specification | instance_identifier_specification | bits_specification
-  //     | union_specification | decimal64_specification
+  //     | union_specification | decimal64_specification // | binary_specification
   //   )
   public static boolean type_body_stmts(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "type_body_stmts")) return false;
@@ -3208,7 +3267,10 @@ public class YangParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // TYPEDEF_KEYWORD string LEFT_BRACE  (identifier_stmt | type_stmt | units_stmt | default_stmt | status_stmt | description_stmt | reference_stmt )+ RIGHT_BRACE
+  // TYPEDEF_KEYWORD string
+  //     LEFT_BRACE
+  //     (identifier_stmt | type_stmt | units_stmt | default_stmt | status_stmt | description_stmt | reference_stmt )+
+  //     RIGHT_BRACE
   public static boolean typedef_stmt(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "typedef_stmt")) return false;
     if (!nextTokenIs(b, YANG_TYPEDEF_KEYWORD)) return false;
@@ -3794,7 +3856,9 @@ public class YangParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // USES_KEYWORD string (SEMICOLON | (LEFT_BRACE  (identifier_stmt |when_stmt | if_feature_stmt | status_stmt | description_stmt | reference_stmt | refine_stmt | uses_augment_stmt )* RIGHT_BRACE))
+  // USES_KEYWORD string (SEMICOLON | (LEFT_BRACE
+  //     (identifier_stmt | when_stmt | if_feature_stmt | status_stmt
+  //     | description_stmt | reference_stmt | refine_stmt | uses_augment_stmt )* RIGHT_BRACE))
   public static boolean uses_stmt(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "uses_stmt")) return false;
     if (!nextTokenIs(b, YANG_USES_KEYWORD)) return false;
@@ -3807,7 +3871,9 @@ public class YangParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // SEMICOLON | (LEFT_BRACE  (identifier_stmt |when_stmt | if_feature_stmt | status_stmt | description_stmt | reference_stmt | refine_stmt | uses_augment_stmt )* RIGHT_BRACE)
+  // SEMICOLON | (LEFT_BRACE
+  //     (identifier_stmt | when_stmt | if_feature_stmt | status_stmt
+  //     | description_stmt | reference_stmt | refine_stmt | uses_augment_stmt )* RIGHT_BRACE)
   private static boolean uses_stmt_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "uses_stmt_2")) return false;
     boolean r;
@@ -3818,7 +3884,9 @@ public class YangParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // LEFT_BRACE  (identifier_stmt |when_stmt | if_feature_stmt | status_stmt | description_stmt | reference_stmt | refine_stmt | uses_augment_stmt )* RIGHT_BRACE
+  // LEFT_BRACE
+  //     (identifier_stmt | when_stmt | if_feature_stmt | status_stmt
+  //     | description_stmt | reference_stmt | refine_stmt | uses_augment_stmt )* RIGHT_BRACE
   private static boolean uses_stmt_2_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "uses_stmt_2_1")) return false;
     boolean r;
@@ -3830,7 +3898,8 @@ public class YangParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // (identifier_stmt |when_stmt | if_feature_stmt | status_stmt | description_stmt | reference_stmt | refine_stmt | uses_augment_stmt )*
+  // (identifier_stmt | when_stmt | if_feature_stmt | status_stmt
+  //     | description_stmt | reference_stmt | refine_stmt | uses_augment_stmt )*
   private static boolean uses_stmt_2_1_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "uses_stmt_2_1_1")) return false;
     while (true) {
@@ -3841,7 +3910,8 @@ public class YangParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // identifier_stmt |when_stmt | if_feature_stmt | status_stmt | description_stmt | reference_stmt | refine_stmt | uses_augment_stmt
+  // identifier_stmt | when_stmt | if_feature_stmt | status_stmt
+  //     | description_stmt | reference_stmt | refine_stmt | uses_augment_stmt
   private static boolean uses_stmt_2_1_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "uses_stmt_2_1_1_0")) return false;
     boolean r;
@@ -3957,11 +4027,11 @@ public class YangParser implements PsiParser, LightPsiParser {
   // string
   public static boolean yin_element_arg(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "yin_element_arg")) return false;
-    if (!nextTokenIs(b, YANG_STRING_LITERAL)) return false;
+    if (!nextTokenIs(b, "<yin element arg>", YANG_STRING_LITERAL, YANG_UNQUOTED_STRING)) return false;
     boolean r;
-    Marker m = enter_section_(b);
+    Marker m = enter_section_(b, l, _NONE_, YANG_YIN_ELEMENT_ARG, "<yin element arg>");
     r = string(b, l + 1);
-    exit_section_(b, m, YANG_YIN_ELEMENT_ARG, r);
+    exit_section_(b, l, m, r, false, null);
     return r;
   }
 
