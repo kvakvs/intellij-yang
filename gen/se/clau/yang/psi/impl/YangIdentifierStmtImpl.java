@@ -17,8 +17,8 @@ public class YangIdentifierStmtImpl extends ASTWrapperPsiElement implements Yang
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitIdentifierStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitIdentifierStmt(this);
   }
 
   @Override
@@ -29,8 +29,8 @@ public class YangIdentifierStmtImpl extends ASTWrapperPsiElement implements Yang
 
   @Override
   @Nullable
-  public YangStmtend getStmtend() {
-    return findChildByClass(YangStmtend.class);
+  public YangEndStatement getEndStatement() {
+    return findChildByClass(YangEndStatement.class);
   }
 
   @Override

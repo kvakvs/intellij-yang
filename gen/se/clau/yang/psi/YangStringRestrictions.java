@@ -7,10 +7,10 @@ import com.intellij.psi.PsiElement;
 
 public interface YangStringRestrictions extends PsiElement {
 
-  @NotNull
-  List<YangLengthStmt> getLengthStmtList();
+  @Nullable
+  YangLengthStmt getLengthStmt();
 
-  @NotNull
-  List<YangPatternStmt> getPatternStmtList();
+  @Nullable
+  YangPatternStmt getPatternStmt();
 
 }

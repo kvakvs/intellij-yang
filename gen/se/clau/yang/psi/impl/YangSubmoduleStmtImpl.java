@@ -17,8 +17,8 @@ public class YangSubmoduleStmtImpl extends ASTWrapperPsiElement implements YangS
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitSubmoduleStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitSubmoduleStmt(this);
   }
 
   @Override

@@ -17,8 +17,8 @@ public class YangUniqueStmtImpl extends ASTWrapperPsiElement implements YangUniq
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitUniqueStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitUniqueStmt(this);
   }
 
   @Override
@@ -29,8 +29,8 @@ public class YangUniqueStmtImpl extends ASTWrapperPsiElement implements YangUniq
 
   @Override
   @NotNull
-  public YangStmtend getStmtend() {
-    return findNotNullChildByClass(YangStmtend.class);
+  public YangEndStatement getEndStatement() {
+    return findNotNullChildByClass(YangEndStatement.class);
   }
 
   @Override

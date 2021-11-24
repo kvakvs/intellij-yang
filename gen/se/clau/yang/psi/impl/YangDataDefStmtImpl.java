@@ -17,8 +17,8 @@ public class YangDataDefStmtImpl extends ASTWrapperPsiElement implements YangDat
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitDataDefStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitDataDefStmt(this);
   }
 
   @Override
@@ -47,6 +47,18 @@ public class YangDataDefStmtImpl extends ASTWrapperPsiElement implements YangDat
 
   @Override
   @Nullable
+  public YangDescriptionStmt getDescriptionStmt() {
+    return findChildByClass(YangDescriptionStmt.class);
+  }
+
+  @Override
+  @Nullable
+  public YangImportStmt getImportStmt() {
+    return findChildByClass(YangImportStmt.class);
+  }
+
+  @Override
+  @Nullable
   public YangLeafListStmt getLeafListStmt() {
     return findChildByClass(YangLeafListStmt.class);
   }
@@ -61,6 +73,18 @@ public class YangDataDefStmtImpl extends ASTWrapperPsiElement implements YangDat
   @Nullable
   public YangListStmt getListStmt() {
     return findChildByClass(YangListStmt.class);
+  }
+
+  @Override
+  @Nullable
+  public YangOrganizationStmt getOrganizationStmt() {
+    return findChildByClass(YangOrganizationStmt.class);
+  }
+
+  @Override
+  @Nullable
+  public YangRevisionStmt getRevisionStmt() {
+    return findChildByClass(YangRevisionStmt.class);
   }
 
   @Override

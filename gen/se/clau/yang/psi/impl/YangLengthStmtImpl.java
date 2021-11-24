@@ -17,8 +17,8 @@ public class YangLengthStmtImpl extends ASTWrapperPsiElement implements YangLeng
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitLengthStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitLengthStmt(this);
   }
 
   @Override

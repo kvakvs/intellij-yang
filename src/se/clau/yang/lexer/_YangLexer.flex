@@ -49,7 +49,8 @@ CommentContent       = ( [^*] | \*+ [^/*] )*
 ESC = "\\"[^ ]
 CHAR = {ESC} | [^\'\"\\]
 STRING_BAD1 = \" ({CHAR} | \') *
-StringLiteral = {STRING_BAD1} \" | {Identifier}
+STRING_BAD2 = \' ({CHAR} | \") *
+StringLiteral = {STRING_BAD1} \" | {STRING_BAD2} \' | {Identifier}
 
 Identifier = [/.a-zA-Z_0-9\-][a-zA-Z0-9_\-.:]*
 
@@ -158,6 +159,7 @@ Identifier = [/.a-zA-Z_0-9\-][a-zA-Z0-9_\-.:]*
   {Comment}               { return com.intellij.psi.TokenType.WHITE_SPACE; }
   {WhiteSpace}+           { return com.intellij.psi.TokenType.WHITE_SPACE; }
 
+  "+"                     { return YangTypes.YANG_PLUS; }
   ";"                     { yybegin(YYINITIAL); return YangTypes.YANG_SEMICOLON; }
   "{"                     { yybegin(YYINITIAL); return YangTypes.YANG_LEFT_BRACE; }
 

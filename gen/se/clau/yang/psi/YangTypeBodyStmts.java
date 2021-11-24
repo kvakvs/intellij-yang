@@ -16,20 +16,20 @@ public interface YangTypeBodyStmts extends PsiElement {
   @Nullable
   YangEnumSpecification getEnumSpecification();
 
-  @NotNull
-  List<YangIdentifierStmt> getIdentifierStmtList();
+  @Nullable
+  YangIdentifierStmt getIdentifierStmt();
 
   @Nullable
   YangIdentityrefSpecification getIdentityrefSpecification();
-
-  @Nullable
-  YangInstanceIdentifierSpecification getInstanceIdentifierSpecification();
 
   @Nullable
   YangLeafrefSpecification getLeafrefSpecification();
 
   @Nullable
   YangNumericalRestrictions getNumericalRestrictions();
+
+  @Nullable
+  YangRequireInstanceStmt getRequireInstanceStmt();
 
   @Nullable
   YangStringRestrictions getStringRestrictions();

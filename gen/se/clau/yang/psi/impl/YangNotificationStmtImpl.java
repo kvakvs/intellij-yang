@@ -17,8 +17,8 @@ public class YangNotificationStmtImpl extends ASTWrapperPsiElement implements Ya
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitNotificationStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitNotificationStmt(this);
   }
 
   @Override

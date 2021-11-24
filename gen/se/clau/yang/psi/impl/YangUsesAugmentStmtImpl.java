@@ -17,8 +17,8 @@ public class YangUsesAugmentStmtImpl extends ASTWrapperPsiElement implements Yan
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitUsesAugmentStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitUsesAugmentStmt(this);
   }
 
   @Override

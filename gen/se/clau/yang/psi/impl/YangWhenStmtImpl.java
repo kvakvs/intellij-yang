@@ -17,8 +17,8 @@ public class YangWhenStmtImpl extends ASTWrapperPsiElement implements YangWhenSt
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitWhenStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitWhenStmt(this);
   }
 
   @Override

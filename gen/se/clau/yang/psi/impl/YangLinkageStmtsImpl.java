@@ -17,8 +17,8 @@ public class YangLinkageStmtsImpl extends ASTWrapperPsiElement implements YangLi
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitLinkageStmts(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitLinkageStmts(this);
   }
 
   @Override

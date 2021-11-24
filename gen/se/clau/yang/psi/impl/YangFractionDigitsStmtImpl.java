@@ -17,8 +17,8 @@ public class YangFractionDigitsStmtImpl extends ASTWrapperPsiElement implements 
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitFractionDigitsStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitFractionDigitsStmt(this);
   }
 
   @Override
@@ -29,8 +29,8 @@ public class YangFractionDigitsStmtImpl extends ASTWrapperPsiElement implements 
 
   @Override
   @NotNull
-  public YangStmtend getStmtend() {
-    return findNotNullChildByClass(YangStmtend.class);
+  public YangEndStatement getEndStatement() {
+    return findNotNullChildByClass(YangEndStatement.class);
   }
 
   @Override

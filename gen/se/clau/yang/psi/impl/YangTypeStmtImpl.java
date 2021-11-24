@@ -17,8 +17,8 @@ public class YangTypeStmtImpl extends ASTWrapperPsiElement implements YangTypeSt
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitTypeStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitTypeStmt(this);
   }
 
   @Override
@@ -34,9 +34,15 @@ public class YangTypeStmtImpl extends ASTWrapperPsiElement implements YangTypeSt
   }
 
   @Override
-  @Nullable
-  public YangTypeBodyStmts getTypeBodyStmts() {
-    return findChildByClass(YangTypeBodyStmts.class);
+  @NotNull
+  public List<YangTypeBodyStmts> getTypeBodyStmtsList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, YangTypeBodyStmts.class);
+  }
+
+  @Override
+  @NotNull
+  public List<YangTypeStmt> getTypeStmtList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, YangTypeStmt.class);
   }
 
 }

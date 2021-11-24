@@ -17,8 +17,8 @@ public class YangYinElementArgImpl extends ASTWrapperPsiElement implements YangY
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitYinElementArg(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitYinElementArg(this);
   }
 
   @Override

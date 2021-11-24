@@ -17,8 +17,8 @@ public class YangIfFeatureStmtImpl extends ASTWrapperPsiElement implements YangI
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitIfFeatureStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitIfFeatureStmt(this);
   }
 
   @Override
@@ -29,8 +29,8 @@ public class YangIfFeatureStmtImpl extends ASTWrapperPsiElement implements YangI
 
   @Override
   @NotNull
-  public YangStmtend getStmtend() {
-    return findNotNullChildByClass(YangStmtend.class);
+  public YangEndStatement getEndStatement() {
+    return findNotNullChildByClass(YangEndStatement.class);
   }
 
   @Override

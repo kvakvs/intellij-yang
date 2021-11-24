@@ -5,446 +5,411 @@ import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElementVisitor;
 import com.intellij.psi.PsiElement;
 
-public class YangVisitor extends PsiElementVisitor {
+public class YangVisitor<R> extends PsiElementVisitor {
 
-  public void visitAnyxmlStmt(@NotNull YangAnyxmlStmt o) {
-    visitPsiElement(o);
+  public R visitAnyxmlStmt(@NotNull YangAnyxmlStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitArgumentStmt(@NotNull YangArgumentStmt o) {
-    visitPsiElement(o);
+  public R visitArgumentStmt(@NotNull YangArgumentStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitAugmentStmt(@NotNull YangAugmentStmt o) {
-    visitPsiElement(o);
+  public R visitAugmentStmt(@NotNull YangAugmentStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitBaseStmt(@NotNull YangBaseStmt o) {
-    visitPsiElement(o);
+  public R visitBaseStmt(@NotNull YangBaseStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitBelongsToStmt(@NotNull YangBelongsToStmt o) {
-    visitPsiElement(o);
+  public R visitBelongsToStmt(@NotNull YangBelongsToStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitBitStmt(@NotNull YangBitStmt o) {
-    visitPsiElement(o);
+  public R visitBitStmt(@NotNull YangBitStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitBitsSpecification(@NotNull YangBitsSpecification o) {
-    visitPsiElement(o);
+  public R visitBitsSpecification(@NotNull YangBitsSpecification o) {
+    return visitPsiElement(o);
   }
 
-  public void visitBodyStmts(@NotNull YangBodyStmts o) {
-    visitPsiElement(o);
+  public R visitBodyStmts(@NotNull YangBodyStmts o) {
+    return visitPsiElement(o);
   }
 
-  public void visitCaseStmt(@NotNull YangCaseStmt o) {
-    visitPsiElement(o);
+  public R visitCaseStmt(@NotNull YangCaseStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitChoiceStmt(@NotNull YangChoiceStmt o) {
-    visitPsiElement(o);
+  public R visitChoiceStmt(@NotNull YangChoiceStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitConfigArg(@NotNull YangConfigArg o) {
-    visitPsiElement(o);
+  public R visitConfigArg(@NotNull YangConfigArg o) {
+    return visitPsiElement(o);
   }
 
-  public void visitConfigStmt(@NotNull YangConfigStmt o) {
-    visitPsiElement(o);
+  public R visitConfigStmt(@NotNull YangConfigStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitContactStmt(@NotNull YangContactStmt o) {
-    visitPsiElement(o);
+  public R visitContactStmt(@NotNull YangContactStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitContainerStmt(@NotNull YangContainerStmt o) {
-    visitPsiElement(o);
+  public R visitContainerStmt(@NotNull YangContainerStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitDataDefStmt(@NotNull YangDataDefStmt o) {
-    visitPsiElement(o);
+  public R visitDataDefStmt(@NotNull YangDataDefStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitDecimal64Specification(@NotNull YangDecimal64Specification o) {
-    visitPsiElement(o);
+  public R visitDecimal64Specification(@NotNull YangDecimal64Specification o) {
+    return visitPsiElement(o);
   }
 
-  public void visitDefaultStmt(@NotNull YangDefaultStmt o) {
-    visitPsiElement(o);
+  public R visitDefaultStmt(@NotNull YangDefaultStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitDescriptionStmt(@NotNull YangDescriptionStmt o) {
-    visitPsiElement(o);
+  public R visitDescriptionStmt(@NotNull YangDescriptionStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitDeviateAddStmt(@NotNull YangDeviateAddStmt o) {
-    visitPsiElement(o);
+  public R visitDeviateAddStmt(@NotNull YangDeviateAddStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitDeviateDeleteStmt(@NotNull YangDeviateDeleteStmt o) {
-    visitPsiElement(o);
+  public R visitDeviateDeleteStmt(@NotNull YangDeviateDeleteStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitDeviateNotSupportedStmt(@NotNull YangDeviateNotSupportedStmt o) {
-    visitPsiElement(o);
+  public R visitDeviateNotSupportedStmt(@NotNull YangDeviateNotSupportedStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitDeviateReplaceStmt(@NotNull YangDeviateReplaceStmt o) {
-    visitPsiElement(o);
+  public R visitDeviateReplaceStmt(@NotNull YangDeviateReplaceStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitDeviationStmt(@NotNull YangDeviationStmt o) {
-    visitPsiElement(o);
+  public R visitDeviationStmt(@NotNull YangDeviationStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitEnumSpecification(@NotNull YangEnumSpecification o) {
-    visitPsiElement(o);
+  public R visitEndStatement(@NotNull YangEndStatement o) {
+    return visitPsiElement(o);
   }
 
-  public void visitEnumStmt(@NotNull YangEnumStmt o) {
-    visitPsiElement(o);
+  public R visitEnumSpecification(@NotNull YangEnumSpecification o) {
+    return visitPsiElement(o);
   }
 
-  public void visitErrorAppTagStmt(@NotNull YangErrorAppTagStmt o) {
-    visitPsiElement(o);
+  public R visitEnumStmt(@NotNull YangEnumStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitErrorMessageStmt(@NotNull YangErrorMessageStmt o) {
-    visitPsiElement(o);
+  public R visitErrorAppTagStmt(@NotNull YangErrorAppTagStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitExtensionStmt(@NotNull YangExtensionStmt o) {
-    visitPsiElement(o);
+  public R visitErrorMessageStmt(@NotNull YangErrorMessageStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitFeatureStmt(@NotNull YangFeatureStmt o) {
-    visitPsiElement(o);
+  public R visitExtensionStmt(@NotNull YangExtensionStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitFractionDigitsStmt(@NotNull YangFractionDigitsStmt o) {
-    visitPsiElement(o);
+  public R visitFeatureStmt(@NotNull YangFeatureStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitGroupingStmt(@NotNull YangGroupingStmt o) {
-    visitPsiElement(o);
+  public R visitFractionDigitsStmt(@NotNull YangFractionDigitsStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitIdentifierStmt(@NotNull YangIdentifierStmt o) {
-    visitPsiElement(o);
+  public R visitGroupingStmt(@NotNull YangGroupingStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitIdentityStmt(@NotNull YangIdentityStmt o) {
-    visitPsiElement(o);
+  public R visitIdentifierStmt(@NotNull YangIdentifierStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitIdentityrefSpecification(@NotNull YangIdentityrefSpecification o) {
-    visitPsiElement(o);
+  public R visitIdentityStmt(@NotNull YangIdentityStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitIfFeatureStmt(@NotNull YangIfFeatureStmt o) {
-    visitPsiElement(o);
+  public R visitIdentityrefSpecification(@NotNull YangIdentityrefSpecification o) {
+    return visitPsiElement(o);
   }
 
-  public void visitImportStmt(@NotNull YangImportStmt o) {
-    visitPsiElement(o);
+  public R visitIfFeatureStmt(@NotNull YangIfFeatureStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitIncludeStmt(@NotNull YangIncludeStmt o) {
-    visitPsiElement(o);
+  public R visitImportStmt(@NotNull YangImportStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitInputStmt(@NotNull YangInputStmt o) {
-    visitPsiElement(o);
+  public R visitIncludeStmt(@NotNull YangIncludeStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitInstanceIdentifierSpecification(@NotNull YangInstanceIdentifierSpecification o) {
-    visitPsiElement(o);
+  public R visitInputStmt(@NotNull YangInputStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitKeyStmt(@NotNull YangKeyStmt o) {
-    visitPsiElement(o);
+  public R visitKeyStmt(@NotNull YangKeyStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitLeafListStmt(@NotNull YangLeafListStmt o) {
-    visitPsiElement(o);
+  public R visitLeafListStmt(@NotNull YangLeafListStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitLeafStmt(@NotNull YangLeafStmt o) {
-    visitPsiElement(o);
+  public R visitLeafStmt(@NotNull YangLeafStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitLeafrefSpecification(@NotNull YangLeafrefSpecification o) {
-    visitPsiElement(o);
+  public R visitLeafrefSpecification(@NotNull YangLeafrefSpecification o) {
+    return visitPsiElement(o);
   }
 
-  public void visitLengthStmt(@NotNull YangLengthStmt o) {
-    visitPsiElement(o);
+  public R visitLengthStmt(@NotNull YangLengthStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitLinkageStmts(@NotNull YangLinkageStmts o) {
-    visitPsiElement(o);
+  public R visitLinkageStmts(@NotNull YangLinkageStmts o) {
+    return visitPsiElement(o);
   }
 
-  public void visitListStmt(@NotNull YangListStmt o) {
-    visitPsiElement(o);
+  public R visitListStmt(@NotNull YangListStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitMandatoryArg(@NotNull YangMandatoryArg o) {
-    visitPsiElement(o);
+  public R visitMandatoryArg(@NotNull YangMandatoryArg o) {
+    return visitPsiElement(o);
   }
 
-  public void visitMandatoryStmt(@NotNull YangMandatoryStmt o) {
-    visitPsiElement(o);
+  public R visitMandatoryStmt(@NotNull YangMandatoryStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitMaxElementsStmt(@NotNull YangMaxElementsStmt o) {
-    visitPsiElement(o);
+  public R visitMaxElementsStmt(@NotNull YangMaxElementsStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitMaxValueArg(@NotNull YangMaxValueArg o) {
-    visitPsiElement(o);
+  public R visitMaxValueArg(@NotNull YangMaxValueArg o) {
+    return visitPsiElement(o);
   }
 
-  public void visitMetaStmts(@NotNull YangMetaStmts o) {
-    visitPsiElement(o);
+  public R visitMetaStmts(@NotNull YangMetaStmts o) {
+    return visitPsiElement(o);
   }
 
-  public void visitMinElementsStmt(@NotNull YangMinElementsStmt o) {
-    visitPsiElement(o);
+  public R visitMinElementsStmt(@NotNull YangMinElementsStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitMinValueArg(@NotNull YangMinValueArg o) {
-    visitPsiElement(o);
+  public R visitMinValueArg(@NotNull YangMinValueArg o) {
+    return visitPsiElement(o);
   }
 
-  public void visitModuleHeaderStmts(@NotNull YangModuleHeaderStmts o) {
-    visitPsiElement(o);
+  public R visitModuleHeaderStmts(@NotNull YangModuleHeaderStmts o) {
+    return visitPsiElement(o);
   }
 
-  public void visitModuleStmt(@NotNull YangModuleStmt o) {
-    visitPsiElement(o);
+  public R visitModuleStmt(@NotNull YangModuleStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitMustStmt(@NotNull YangMustStmt o) {
-    visitPsiElement(o);
+  public R visitMustStmt(@NotNull YangMustStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitNamespaceStmt(@NotNull YangNamespaceStmt o) {
-    visitPsiElement(o);
+  public R visitNamespaceStmt(@NotNull YangNamespaceStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitNotificationStmt(@NotNull YangNotificationStmt o) {
-    visitPsiElement(o);
+  public R visitNotificationStmt(@NotNull YangNotificationStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitNumericalRestrictions(@NotNull YangNumericalRestrictions o) {
-    visitPsiElement(o);
+  public R visitNumericalRestrictions(@NotNull YangNumericalRestrictions o) {
+    return visitPsiElement(o);
   }
 
-  public void visitOrderedByArg(@NotNull YangOrderedByArg o) {
-    visitPsiElement(o);
+  public R visitOrderedByArg(@NotNull YangOrderedByArg o) {
+    return visitPsiElement(o);
   }
 
-  public void visitOrderedByStmt(@NotNull YangOrderedByStmt o) {
-    visitPsiElement(o);
+  public R visitOrderedByStmt(@NotNull YangOrderedByStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitOrganizationStmt(@NotNull YangOrganizationStmt o) {
-    visitPsiElement(o);
+  public R visitOrganizationStmt(@NotNull YangOrganizationStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitOutputStmt(@NotNull YangOutputStmt o) {
-    visitPsiElement(o);
+  public R visitOutputStmt(@NotNull YangOutputStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitPathStmt(@NotNull YangPathStmt o) {
-    visitPsiElement(o);
+  public R visitPathStmt(@NotNull YangPathStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitPatternStmt(@NotNull YangPatternStmt o) {
-    visitPsiElement(o);
+  public R visitPatternStmt(@NotNull YangPatternStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitPositionStmt(@NotNull YangPositionStmt o) {
-    visitPsiElement(o);
+  public R visitPositionStmt(@NotNull YangPositionStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitPrefixStmt(@NotNull YangPrefixStmt o) {
-    visitPsiElement(o);
+  public R visitPrefixStmt(@NotNull YangPrefixStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitPresenceStmt(@NotNull YangPresenceStmt o) {
-    visitPsiElement(o);
+  public R visitPresenceStmt(@NotNull YangPresenceStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitRangeStmt(@NotNull YangRangeStmt o) {
-    visitPsiElement(o);
+  public R visitRangeStmt(@NotNull YangRangeStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitReferenceStmt(@NotNull YangReferenceStmt o) {
-    visitPsiElement(o);
+  public R visitReferenceStmt(@NotNull YangReferenceStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitRefineAnyxmlStmts(@NotNull YangRefineAnyxmlStmts o) {
-    visitPsiElement(o);
+  public R visitRefineStmt(@NotNull YangRefineStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitRefineCaseStmts(@NotNull YangRefineCaseStmts o) {
-    visitPsiElement(o);
+  public R visitRequireInstanceArg(@NotNull YangRequireInstanceArg o) {
+    return visitPsiElement(o);
   }
 
-  public void visitRefineChoiceStmts(@NotNull YangRefineChoiceStmts o) {
-    visitPsiElement(o);
+  public R visitRequireInstanceStmt(@NotNull YangRequireInstanceStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitRefineContainerStmts(@NotNull YangRefineContainerStmts o) {
-    visitPsiElement(o);
+  public R visitRevisionDateStmt(@NotNull YangRevisionDateStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitRefineLeafListStmts(@NotNull YangRefineLeafListStmts o) {
-    visitPsiElement(o);
+  public R visitRevisionStmt(@NotNull YangRevisionStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitRefineLeafStmts(@NotNull YangRefineLeafStmts o) {
-    visitPsiElement(o);
+  public R visitRevisionStmts(@NotNull YangRevisionStmts o) {
+    return visitPsiElement(o);
   }
 
-  public void visitRefineListStmts(@NotNull YangRefineListStmts o) {
-    visitPsiElement(o);
+  public R visitRpcStmt(@NotNull YangRpcStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitRefinePom(@NotNull YangRefinePom o) {
-    visitPsiElement(o);
+  public R visitShortCaseStmt(@NotNull YangShortCaseStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitRefineStmt(@NotNull YangRefineStmt o) {
-    visitPsiElement(o);
+  public R visitStatusArg(@NotNull YangStatusArg o) {
+    return visitPsiElement(o);
   }
 
-  public void visitRequireInstanceArg(@NotNull YangRequireInstanceArg o) {
-    visitPsiElement(o);
+  public R visitStatusStmt(@NotNull YangStatusStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitRequireInstanceStmt(@NotNull YangRequireInstanceStmt o) {
-    visitPsiElement(o);
+  public R visitString(@NotNull YangString o) {
+    return visitPsiElement(o);
   }
 
-  public void visitRevisionDateStmt(@NotNull YangRevisionDateStmt o) {
-    visitPsiElement(o);
+  public R visitStringRestrictions(@NotNull YangStringRestrictions o) {
+    return visitPsiElement(o);
   }
 
-  public void visitRevisionStmt(@NotNull YangRevisionStmt o) {
-    visitPsiElement(o);
+  public R visitSubmoduleHeaderStmts(@NotNull YangSubmoduleHeaderStmts o) {
+    return visitPsiElement(o);
   }
 
-  public void visitRevisionStmts(@NotNull YangRevisionStmts o) {
-    visitPsiElement(o);
+  public R visitSubmoduleStmt(@NotNull YangSubmoduleStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitRpcStmt(@NotNull YangRpcStmt o) {
-    visitPsiElement(o);
+  public R visitTypeBodyStmts(@NotNull YangTypeBodyStmts o) {
+    return visitPsiElement(o);
   }
 
-  public void visitShortCaseStmt(@NotNull YangShortCaseStmt o) {
-    visitPsiElement(o);
+  public R visitTypeStmt(@NotNull YangTypeStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitStatusArg(@NotNull YangStatusArg o) {
-    visitPsiElement(o);
+  public R visitTypedefStmt(@NotNull YangTypedefStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitStatusStmt(@NotNull YangStatusStmt o) {
-    visitPsiElement(o);
+  public R visitUnionSpecification(@NotNull YangUnionSpecification o) {
+    return visitPsiElement(o);
   }
 
-  public void visitStmtend(@NotNull YangStmtend o) {
-    visitPsiElement(o);
+  public R visitUniqueStmt(@NotNull YangUniqueStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitString(@NotNull YangString o) {
-    visitPsiElement(o);
+  public R visitUnitsStmt(@NotNull YangUnitsStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitStringRestrictions(@NotNull YangStringRestrictions o) {
-    visitPsiElement(o);
+  public R visitUnknownStatement(@NotNull YangUnknownStatement o) {
+    return visitPsiElement(o);
   }
 
-  public void visitSubmoduleHeaderStmts(@NotNull YangSubmoduleHeaderStmts o) {
-    visitPsiElement(o);
+  public R visitUnknownStatement2(@NotNull YangUnknownStatement2 o) {
+    return visitPsiElement(o);
   }
 
-  public void visitSubmoduleStmt(@NotNull YangSubmoduleStmt o) {
-    visitPsiElement(o);
+  public R visitUnknownStatement3(@NotNull YangUnknownStatement3 o) {
+    return visitPsiElement(o);
   }
 
-  public void visitTypeBodyStmts(@NotNull YangTypeBodyStmts o) {
-    visitPsiElement(o);
+  public R visitUsesAugmentStmt(@NotNull YangUsesAugmentStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitTypeStmt(@NotNull YangTypeStmt o) {
-    visitPsiElement(o);
+  public R visitUsesStmt(@NotNull YangUsesStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitTypedefStmt(@NotNull YangTypedefStmt o) {
-    visitPsiElement(o);
+  public R visitValueStmt(@NotNull YangValueStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitUnionSpecification(@NotNull YangUnionSpecification o) {
-    visitPsiElement(o);
+  public R visitWhenStmt(@NotNull YangWhenStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitUniqueStmt(@NotNull YangUniqueStmt o) {
-    visitPsiElement(o);
+  public R visitYangVersionStmt(@NotNull YangYangVersionStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitUnitsStmt(@NotNull YangUnitsStmt o) {
-    visitPsiElement(o);
+  public R visitYinElementArg(@NotNull YangYinElementArg o) {
+    return visitPsiElement(o);
   }
 
-  public void visitUnknownStatement(@NotNull YangUnknownStatement o) {
-    visitPsiElement(o);
+  public R visitYinElementStmt(@NotNull YangYinElementStmt o) {
+    return visitPsiElement(o);
   }
 
-  public void visitUnknownStatement2(@NotNull YangUnknownStatement2 o) {
-    visitPsiElement(o);
-  }
-
-  public void visitUnknownStatement3(@NotNull YangUnknownStatement3 o) {
-    visitPsiElement(o);
-  }
-
-  public void visitUsesAugmentStmt(@NotNull YangUsesAugmentStmt o) {
-    visitPsiElement(o);
-  }
-
-  public void visitUsesStmt(@NotNull YangUsesStmt o) {
-    visitPsiElement(o);
-  }
-
-  public void visitValueStmt(@NotNull YangValueStmt o) {
-    visitPsiElement(o);
-  }
-
-  public void visitWhenStmt(@NotNull YangWhenStmt o) {
-    visitPsiElement(o);
-  }
-
-  public void visitYangVersionStmt(@NotNull YangYangVersionStmt o) {
-    visitPsiElement(o);
-  }
-
-  public void visitYinElementArg(@NotNull YangYinElementArg o) {
-    visitPsiElement(o);
-  }
-
-  public void visitYinElementStmt(@NotNull YangYinElementStmt o) {
-    visitPsiElement(o);
-  }
-
-  public void visitPsiElement(@NotNull PsiElement o) {
+  public R visitPsiElement(@NotNull PsiElement o) {
     visitElement(o);
+    return null;
   }
 
 }

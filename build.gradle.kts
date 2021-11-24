@@ -1,15 +1,19 @@
 plugins {
     java
-    id("org.jetbrains.kotlin.jvm") version "1.4.32"
+    id("org.jetbrains.kotlin.jvm") version "1.6.0"
     id("org.jetbrains.intellij") version "0.7.2"
 }
+
+val intelliLangPlugin = "org.intellij.intelliLang"
+val psiViewerPluginVersion = prop("psiViewerPluginVersion")
+val psiViewerPlugin = "PsiViewer:${prop("psiViewerPluginVersion")}"
 
 repositories {
     mavenCentral()
 }
 
 intellij { // See https://github.com/JetBrains/gradle-intellij-plugin/
-    version = "2021.1"
+    version = "2021.2.3"
     apply(plugin = "java")
 }
 
@@ -23,6 +27,14 @@ compileKotlin.kotlinOptions.freeCompilerArgs += "-Xjvm-default=enable"
 compileKotlin.kotlinOptions.jvmTarget = "11"
 
 allprojects {
+    intellij {
+        val plugins = mutableListOf(
+            intelliLangPlugin,
+            psiViewerPlugin
+        )
+        setPlugins(*plugins.toTypedArray())
+    }
+
     sourceSets {
         main {
             java.srcDirs("src", "gen")
@@ -30,4 +42,7 @@ allprojects {
         }
     }
 }
-//}
+
+fun prop(name: String): String =
+    extra.properties[name] as? String
+        ?: error("Property `$name` is not defined in gradle.properties")

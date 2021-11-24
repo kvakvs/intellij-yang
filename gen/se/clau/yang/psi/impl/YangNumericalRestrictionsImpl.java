@@ -17,8 +17,8 @@ public class YangNumericalRestrictionsImpl extends ASTWrapperPsiElement implemen
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitNumericalRestrictions(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitNumericalRestrictions(this);
   }
 
   @Override

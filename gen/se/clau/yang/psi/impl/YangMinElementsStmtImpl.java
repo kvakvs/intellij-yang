@@ -17,8 +17,8 @@ public class YangMinElementsStmtImpl extends ASTWrapperPsiElement implements Yan
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitMinElementsStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitMinElementsStmt(this);
   }
 
   @Override
@@ -29,14 +29,14 @@ public class YangMinElementsStmtImpl extends ASTWrapperPsiElement implements Yan
 
   @Override
   @NotNull
-  public YangMinValueArg getMinValueArg() {
-    return findNotNullChildByClass(YangMinValueArg.class);
+  public YangEndStatement getEndStatement() {
+    return findNotNullChildByClass(YangEndStatement.class);
   }
 
   @Override
   @NotNull
-  public YangStmtend getStmtend() {
-    return findNotNullChildByClass(YangStmtend.class);
+  public YangMinValueArg getMinValueArg() {
+    return findNotNullChildByClass(YangMinValueArg.class);
   }
 
 }

@@ -17,8 +17,8 @@ public class YangNamespaceStmtImpl extends ASTWrapperPsiElement implements YangN
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitNamespaceStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitNamespaceStmt(this);
   }
 
   @Override
@@ -29,8 +29,8 @@ public class YangNamespaceStmtImpl extends ASTWrapperPsiElement implements YangN
 
   @Override
   @NotNull
-  public YangStmtend getStmtend() {
-    return findNotNullChildByClass(YangStmtend.class);
+  public YangEndStatement getEndStatement() {
+    return findNotNullChildByClass(YangEndStatement.class);
   }
 
   @Override

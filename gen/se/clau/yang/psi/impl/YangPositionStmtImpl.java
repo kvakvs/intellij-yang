@@ -17,8 +17,8 @@ public class YangPositionStmtImpl extends ASTWrapperPsiElement implements YangPo
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitPositionStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitPositionStmt(this);
   }
 
   @Override
@@ -29,8 +29,8 @@ public class YangPositionStmtImpl extends ASTWrapperPsiElement implements YangPo
 
   @Override
   @NotNull
-  public YangStmtend getStmtend() {
-    return findNotNullChildByClass(YangStmtend.class);
+  public YangEndStatement getEndStatement() {
+    return findNotNullChildByClass(YangEndStatement.class);
   }
 
   @Override

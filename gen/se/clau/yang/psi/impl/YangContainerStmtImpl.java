@@ -17,8 +17,8 @@ public class YangContainerStmtImpl extends ASTWrapperPsiElement implements YangC
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitContainerStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitContainerStmt(this);
   }
 
   @Override

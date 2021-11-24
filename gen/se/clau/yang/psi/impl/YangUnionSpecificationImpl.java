@@ -17,8 +17,8 @@ public class YangUnionSpecificationImpl extends ASTWrapperPsiElement implements 
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitUnionSpecification(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitUnionSpecification(this);
   }
 
   @Override

@@ -10,7 +10,10 @@ public interface YangTypeStmt extends PsiElement {
   @NotNull
   YangString getString();
 
-  @Nullable
-  YangTypeBodyStmts getTypeBodyStmts();
+  @NotNull
+  List<YangTypeBodyStmts> getTypeBodyStmtsList();
+
+  @NotNull
+  List<YangTypeStmt> getTypeStmtList();
 
 }

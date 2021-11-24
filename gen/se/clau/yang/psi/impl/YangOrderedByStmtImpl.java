@@ -17,8 +17,8 @@ public class YangOrderedByStmtImpl extends ASTWrapperPsiElement implements YangO
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitOrderedByStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitOrderedByStmt(this);
   }
 
   @Override
@@ -29,14 +29,14 @@ public class YangOrderedByStmtImpl extends ASTWrapperPsiElement implements YangO
 
   @Override
   @NotNull
-  public YangOrderedByArg getOrderedByArg() {
-    return findNotNullChildByClass(YangOrderedByArg.class);
+  public YangEndStatement getEndStatement() {
+    return findNotNullChildByClass(YangEndStatement.class);
   }
 
   @Override
   @NotNull
-  public YangStmtend getStmtend() {
-    return findNotNullChildByClass(YangStmtend.class);
+  public YangOrderedByArg getOrderedByArg() {
+    return findNotNullChildByClass(YangOrderedByArg.class);
   }
 
 }

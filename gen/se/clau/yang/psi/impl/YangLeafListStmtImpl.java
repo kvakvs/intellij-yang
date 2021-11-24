@@ -17,8 +17,8 @@ public class YangLeafListStmtImpl extends ASTWrapperPsiElement implements YangLe
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitLeafListStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitLeafListStmt(this);
   }
 
   @Override

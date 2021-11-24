@@ -17,8 +17,8 @@ public class YangRequireInstanceArgImpl extends ASTWrapperPsiElement implements 
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitRequireInstanceArg(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitRequireInstanceArg(this);
   }
 
   @Override

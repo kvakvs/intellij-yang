@@ -8,9 +8,9 @@ import com.intellij.psi.PsiElement;
 public interface YangMandatoryStmt extends PsiElement {
 
   @NotNull
-  YangMandatoryArg getMandatoryArg();
+  YangEndStatement getEndStatement();
 
   @NotNull
-  YangStmtend getStmtend();
+  YangMandatoryArg getMandatoryArg();
 
 }

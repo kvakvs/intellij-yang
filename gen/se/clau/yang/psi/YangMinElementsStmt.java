@@ -8,9 +8,9 @@ import com.intellij.psi.PsiElement;
 public interface YangMinElementsStmt extends PsiElement {
 
   @NotNull
-  YangMinValueArg getMinValueArg();
+  YangEndStatement getEndStatement();
 
   @NotNull
-  YangStmtend getStmtend();
+  YangMinValueArg getMinValueArg();
 
 }

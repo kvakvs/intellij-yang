@@ -17,8 +17,8 @@ public class YangBitStmtImpl extends ASTWrapperPsiElement implements YangBitStmt
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitBitStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitBitStmt(this);
   }
 
   @Override

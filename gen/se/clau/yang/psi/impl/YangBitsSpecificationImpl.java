@@ -17,8 +17,8 @@ public class YangBitsSpecificationImpl extends ASTWrapperPsiElement implements Y
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitBitsSpecification(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitBitsSpecification(this);
   }
 
   @Override

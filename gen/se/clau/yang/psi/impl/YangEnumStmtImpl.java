@@ -17,8 +17,8 @@ public class YangEnumStmtImpl extends ASTWrapperPsiElement implements YangEnumSt
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitEnumStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitEnumStmt(this);
   }
 
   @Override

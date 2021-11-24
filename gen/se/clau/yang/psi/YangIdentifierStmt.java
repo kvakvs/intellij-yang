@@ -8,7 +8,7 @@ import com.intellij.psi.PsiElement;
 public interface YangIdentifierStmt extends PsiElement {
 
   @Nullable
-  YangStmtend getStmtend();
+  YangEndStatement getEndStatement();
 
   @Nullable
   YangString getString();

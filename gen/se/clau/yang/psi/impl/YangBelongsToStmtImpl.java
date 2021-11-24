@@ -17,8 +17,8 @@ public class YangBelongsToStmtImpl extends ASTWrapperPsiElement implements YangB
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitBelongsToStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitBelongsToStmt(this);
   }
 
   @Override

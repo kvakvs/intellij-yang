@@ -17,8 +17,8 @@ public class YangMaxElementsStmtImpl extends ASTWrapperPsiElement implements Yan
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitMaxElementsStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitMaxElementsStmt(this);
   }
 
   @Override
@@ -29,14 +29,14 @@ public class YangMaxElementsStmtImpl extends ASTWrapperPsiElement implements Yan
 
   @Override
   @NotNull
-  public YangMaxValueArg getMaxValueArg() {
-    return findNotNullChildByClass(YangMaxValueArg.class);
+  public YangEndStatement getEndStatement() {
+    return findNotNullChildByClass(YangEndStatement.class);
   }
 
   @Override
   @NotNull
-  public YangStmtend getStmtend() {
-    return findNotNullChildByClass(YangStmtend.class);
+  public YangMaxValueArg getMaxValueArg() {
+    return findNotNullChildByClass(YangMaxValueArg.class);
   }
 
 }

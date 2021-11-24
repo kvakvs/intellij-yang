@@ -17,8 +17,8 @@ public class YangRangeStmtImpl extends ASTWrapperPsiElement implements YangRange
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitRangeStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitRangeStmt(this);
   }
 
   @Override

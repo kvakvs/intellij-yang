@@ -7,8 +7,35 @@ import com.intellij.psi.PsiElement;
 
 public interface YangRefineStmt extends PsiElement {
 
-  @Nullable
-  YangRefinePom getRefinePom();
+  @NotNull
+  List<YangConfigStmt> getConfigStmtList();
+
+  @NotNull
+  List<YangDefaultStmt> getDefaultStmtList();
+
+  @NotNull
+  List<YangDescriptionStmt> getDescriptionStmtList();
+
+  @NotNull
+  List<YangIdentifierStmt> getIdentifierStmtList();
+
+  @NotNull
+  List<YangMandatoryStmt> getMandatoryStmtList();
+
+  @NotNull
+  List<YangMaxElementsStmt> getMaxElementsStmtList();
+
+  @NotNull
+  List<YangMinElementsStmt> getMinElementsStmtList();
+
+  @NotNull
+  List<YangMustStmt> getMustStmtList();
+
+  @NotNull
+  List<YangPresenceStmt> getPresenceStmtList();
+
+  @NotNull
+  List<YangReferenceStmt> getReferenceStmtList();
 
   @NotNull
   YangString getString();

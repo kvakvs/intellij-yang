@@ -17,8 +17,8 @@ public class YangChoiceStmtImpl extends ASTWrapperPsiElement implements YangChoi
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitChoiceStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitChoiceStmt(this);
   }
 
   @Override

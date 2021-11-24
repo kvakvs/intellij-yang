@@ -8,7 +8,7 @@ import com.intellij.psi.PsiElement;
 public interface YangKeyStmt extends PsiElement {
 
   @NotNull
-  YangStmtend getStmtend();
+  YangEndStatement getEndStatement();
 
   @NotNull
   YangString getString();

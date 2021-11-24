@@ -17,8 +17,8 @@ public class YangContactStmtImpl extends ASTWrapperPsiElement implements YangCon
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitContactStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitContactStmt(this);
   }
 
   @Override
@@ -29,8 +29,8 @@ public class YangContactStmtImpl extends ASTWrapperPsiElement implements YangCon
 
   @Override
   @NotNull
-  public YangStmtend getStmtend() {
-    return findNotNullChildByClass(YangStmtend.class);
+  public YangEndStatement getEndStatement() {
+    return findNotNullChildByClass(YangEndStatement.class);
   }
 
   @Override

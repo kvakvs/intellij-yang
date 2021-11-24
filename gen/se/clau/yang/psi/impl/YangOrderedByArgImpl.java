@@ -17,8 +17,8 @@ public class YangOrderedByArgImpl extends ASTWrapperPsiElement implements YangOr
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitOrderedByArg(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitOrderedByArg(this);
   }
 
   @Override

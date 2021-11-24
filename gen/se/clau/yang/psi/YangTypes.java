@@ -31,6 +31,7 @@ public interface YangTypes {
   IElementType YANG_DEVIATE_NOT_SUPPORTED_STMT = new YangElementType("YANG_DEVIATE_NOT_SUPPORTED_STMT");
   IElementType YANG_DEVIATE_REPLACE_STMT = new YangElementType("YANG_DEVIATE_REPLACE_STMT");
   IElementType YANG_DEVIATION_STMT = new YangElementType("YANG_DEVIATION_STMT");
+  IElementType YANG_END_STATEMENT = new YangElementType("YANG_END_STATEMENT");
   IElementType YANG_ENUM_SPECIFICATION = new YangElementType("YANG_ENUM_SPECIFICATION");
   IElementType YANG_ENUM_STMT = new YangElementType("YANG_ENUM_STMT");
   IElementType YANG_ERROR_APP_TAG_STMT = new YangElementType("YANG_ERROR_APP_TAG_STMT");
@@ -46,7 +47,6 @@ public interface YangTypes {
   IElementType YANG_IMPORT_STMT = new YangElementType("YANG_IMPORT_STMT");
   IElementType YANG_INCLUDE_STMT = new YangElementType("YANG_INCLUDE_STMT");
   IElementType YANG_INPUT_STMT = new YangElementType("YANG_INPUT_STMT");
-  IElementType YANG_INSTANCE_IDENTIFIER_SPECIFICATION = new YangElementType("YANG_INSTANCE_IDENTIFIER_SPECIFICATION");
   IElementType YANG_KEY_STMT = new YangElementType("YANG_KEY_STMT");
   IElementType YANG_LEAFREF_SPECIFICATION = new YangElementType("YANG_LEAFREF_SPECIFICATION");
   IElementType YANG_LEAF_LIST_STMT = new YangElementType("YANG_LEAF_LIST_STMT");
@@ -78,14 +78,6 @@ public interface YangTypes {
   IElementType YANG_PRESENCE_STMT = new YangElementType("YANG_PRESENCE_STMT");
   IElementType YANG_RANGE_STMT = new YangElementType("YANG_RANGE_STMT");
   IElementType YANG_REFERENCE_STMT = new YangElementType("YANG_REFERENCE_STMT");
-  IElementType YANG_REFINE_ANYXML_STMTS = new YangElementType("YANG_REFINE_ANYXML_STMTS");
-  IElementType YANG_REFINE_CASE_STMTS = new YangElementType("YANG_REFINE_CASE_STMTS");
-  IElementType YANG_REFINE_CHOICE_STMTS = new YangElementType("YANG_REFINE_CHOICE_STMTS");
-  IElementType YANG_REFINE_CONTAINER_STMTS = new YangElementType("YANG_REFINE_CONTAINER_STMTS");
-  IElementType YANG_REFINE_LEAF_LIST_STMTS = new YangElementType("YANG_REFINE_LEAF_LIST_STMTS");
-  IElementType YANG_REFINE_LEAF_STMTS = new YangElementType("YANG_REFINE_LEAF_STMTS");
-  IElementType YANG_REFINE_LIST_STMTS = new YangElementType("YANG_REFINE_LIST_STMTS");
-  IElementType YANG_REFINE_POM = new YangElementType("YANG_REFINE_POM");
   IElementType YANG_REFINE_STMT = new YangElementType("YANG_REFINE_STMT");
   IElementType YANG_REQUIRE_INSTANCE_ARG = new YangElementType("YANG_REQUIRE_INSTANCE_ARG");
   IElementType YANG_REQUIRE_INSTANCE_STMT = new YangElementType("YANG_REQUIRE_INSTANCE_STMT");
@@ -96,7 +88,6 @@ public interface YangTypes {
   IElementType YANG_SHORT_CASE_STMT = new YangElementType("YANG_SHORT_CASE_STMT");
   IElementType YANG_STATUS_ARG = new YangElementType("YANG_STATUS_ARG");
   IElementType YANG_STATUS_STMT = new YangElementType("YANG_STATUS_STMT");
-  IElementType YANG_STMTEND = new YangElementType("YANG_STMTEND");
   IElementType YANG_STRING = new YangElementType("YANG_STRING");
   IElementType YANG_STRING_RESTRICTIONS = new YangElementType("YANG_STRING_RESTRICTIONS");
   IElementType YANG_SUBMODULE_HEADER_STMTS = new YangElementType("YANG_SUBMODULE_HEADER_STMTS");
@@ -262,6 +253,9 @@ public interface YangTypes {
       else if (type == YANG_DEVIATION_STMT) {
         return new YangDeviationStmtImpl(node);
       }
+      else if (type == YANG_END_STATEMENT) {
+        return new YangEndStatementImpl(node);
+      }
       else if (type == YANG_ENUM_SPECIFICATION) {
         return new YangEnumSpecificationImpl(node);
       }
@@ -306,9 +300,6 @@ public interface YangTypes {
       }
       else if (type == YANG_INPUT_STMT) {
         return new YangInputStmtImpl(node);
-      }
-      else if (type == YANG_INSTANCE_IDENTIFIER_SPECIFICATION) {
-        return new YangInstanceIdentifierSpecificationImpl(node);
       }
       else if (type == YANG_KEY_STMT) {
         return new YangKeyStmtImpl(node);
@@ -403,30 +394,6 @@ public interface YangTypes {
       else if (type == YANG_REFERENCE_STMT) {
         return new YangReferenceStmtImpl(node);
       }
-      else if (type == YANG_REFINE_ANYXML_STMTS) {
-        return new YangRefineAnyxmlStmtsImpl(node);
-      }
-      else if (type == YANG_REFINE_CASE_STMTS) {
-        return new YangRefineCaseStmtsImpl(node);
-      }
-      else if (type == YANG_REFINE_CHOICE_STMTS) {
-        return new YangRefineChoiceStmtsImpl(node);
-      }
-      else if (type == YANG_REFINE_CONTAINER_STMTS) {
-        return new YangRefineContainerStmtsImpl(node);
-      }
-      else if (type == YANG_REFINE_LEAF_LIST_STMTS) {
-        return new YangRefineLeafListStmtsImpl(node);
-      }
-      else if (type == YANG_REFINE_LEAF_STMTS) {
-        return new YangRefineLeafStmtsImpl(node);
-      }
-      else if (type == YANG_REFINE_LIST_STMTS) {
-        return new YangRefineListStmtsImpl(node);
-      }
-      else if (type == YANG_REFINE_POM) {
-        return new YangRefinePomImpl(node);
-      }
       else if (type == YANG_REFINE_STMT) {
         return new YangRefineStmtImpl(node);
       }
@@ -456,9 +423,6 @@ public interface YangTypes {
       }
       else if (type == YANG_STATUS_STMT) {
         return new YangStatusStmtImpl(node);
-      }
-      else if (type == YANG_STMTEND) {
-        return new YangStmtendImpl(node);
       }
       else if (type == YANG_STRING) {
         return new YangStringImpl(node);

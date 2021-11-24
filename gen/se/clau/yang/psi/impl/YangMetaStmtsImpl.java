@@ -17,8 +17,8 @@ public class YangMetaStmtsImpl extends ASTWrapperPsiElement implements YangMetaS
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitMetaStmts(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitMetaStmts(this);
   }
 
   @Override

@@ -17,8 +17,8 @@ public class YangDecimal64SpecificationImpl extends ASTWrapperPsiElement impleme
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitDecimal64Specification(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitDecimal64Specification(this);
   }
 
   @Override

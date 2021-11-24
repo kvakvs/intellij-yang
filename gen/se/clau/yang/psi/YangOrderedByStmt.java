@@ -8,9 +8,9 @@ import com.intellij.psi.PsiElement;
 public interface YangOrderedByStmt extends PsiElement {
 
   @NotNull
-  YangOrderedByArg getOrderedByArg();
+  YangEndStatement getEndStatement();
 
   @NotNull
-  YangStmtend getStmtend();
+  YangOrderedByArg getOrderedByArg();
 
 }

@@ -17,8 +17,8 @@ public class YangIdentityStmtImpl extends ASTWrapperPsiElement implements YangId
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitIdentityStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitIdentityStmt(this);
   }
 
   @Override

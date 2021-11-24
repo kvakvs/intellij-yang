@@ -8,7 +8,7 @@ import com.intellij.psi.PsiElement;
 public interface YangFractionDigitsStmt extends PsiElement {
 
   @NotNull
-  YangStmtend getStmtend();
+  YangEndStatement getEndStatement();
 
   @NotNull
   YangString getString();

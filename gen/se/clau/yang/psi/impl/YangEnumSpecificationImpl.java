@@ -17,8 +17,8 @@ public class YangEnumSpecificationImpl extends ASTWrapperPsiElement implements Y
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitEnumSpecification(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitEnumSpecification(this);
   }
 
   @Override

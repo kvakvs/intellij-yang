@@ -17,8 +17,8 @@ public class YangStatusArgImpl extends ASTWrapperPsiElement implements YangStatu
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitStatusArg(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitStatusArg(this);
   }
 
   @Override

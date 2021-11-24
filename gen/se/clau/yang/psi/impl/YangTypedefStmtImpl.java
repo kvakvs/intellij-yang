@@ -17,8 +17,8 @@ public class YangTypedefStmtImpl extends ASTWrapperPsiElement implements YangTyp
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitTypedefStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitTypedefStmt(this);
   }
 
   @Override

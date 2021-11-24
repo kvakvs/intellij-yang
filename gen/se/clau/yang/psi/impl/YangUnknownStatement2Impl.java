@@ -17,8 +17,8 @@ public class YangUnknownStatement2Impl extends ASTWrapperPsiElement implements Y
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitUnknownStatement2(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitUnknownStatement2(this);
   }
 
   @Override

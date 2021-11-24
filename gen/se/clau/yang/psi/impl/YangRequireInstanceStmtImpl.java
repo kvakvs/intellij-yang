@@ -17,8 +17,8 @@ public class YangRequireInstanceStmtImpl extends ASTWrapperPsiElement implements
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitRequireInstanceStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitRequireInstanceStmt(this);
   }
 
   @Override
@@ -29,14 +29,14 @@ public class YangRequireInstanceStmtImpl extends ASTWrapperPsiElement implements
 
   @Override
   @NotNull
-  public YangRequireInstanceArg getRequireInstanceArg() {
-    return findNotNullChildByClass(YangRequireInstanceArg.class);
+  public YangEndStatement getEndStatement() {
+    return findNotNullChildByClass(YangEndStatement.class);
   }
 
   @Override
   @NotNull
-  public YangStmtend getStmtend() {
-    return findNotNullChildByClass(YangStmtend.class);
+  public YangRequireInstanceArg getRequireInstanceArg() {
+    return findNotNullChildByClass(YangRequireInstanceArg.class);
   }
 
 }

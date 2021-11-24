@@ -17,8 +17,8 @@ public class YangMandatoryStmtImpl extends ASTWrapperPsiElement implements YangM
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitMandatoryStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitMandatoryStmt(this);
   }
 
   @Override
@@ -29,14 +29,14 @@ public class YangMandatoryStmtImpl extends ASTWrapperPsiElement implements YangM
 
   @Override
   @NotNull
-  public YangMandatoryArg getMandatoryArg() {
-    return findNotNullChildByClass(YangMandatoryArg.class);
+  public YangEndStatement getEndStatement() {
+    return findNotNullChildByClass(YangEndStatement.class);
   }
 
   @Override
   @NotNull
-  public YangStmtend getStmtend() {
-    return findNotNullChildByClass(YangStmtend.class);
+  public YangMandatoryArg getMandatoryArg() {
+    return findNotNullChildByClass(YangMandatoryArg.class);
   }
 
 }

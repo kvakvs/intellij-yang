@@ -17,8 +17,8 @@ public class YangMandatoryArgImpl extends ASTWrapperPsiElement implements YangMa
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitMandatoryArg(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitMandatoryArg(this);
   }
 
   @Override

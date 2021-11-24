@@ -17,8 +17,8 @@ public class YangShortCaseStmtImpl extends ASTWrapperPsiElement implements YangS
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitShortCaseStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitShortCaseStmt(this);
   }
 
   @Override

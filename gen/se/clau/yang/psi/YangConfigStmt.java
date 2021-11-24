@@ -11,6 +11,6 @@ public interface YangConfigStmt extends PsiElement {
   YangConfigArg getConfigArg();
 
   @NotNull
-  YangStmtend getStmtend();
+  YangEndStatement getEndStatement();
 
 }

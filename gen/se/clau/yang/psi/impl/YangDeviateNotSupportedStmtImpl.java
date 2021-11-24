@@ -17,8 +17,8 @@ public class YangDeviateNotSupportedStmtImpl extends ASTWrapperPsiElement implem
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitDeviateNotSupportedStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitDeviateNotSupportedStmt(this);
   }
 
   @Override

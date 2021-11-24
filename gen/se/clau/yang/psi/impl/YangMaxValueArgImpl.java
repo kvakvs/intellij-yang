@@ -17,8 +17,8 @@ public class YangMaxValueArgImpl extends ASTWrapperPsiElement implements YangMax
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitMaxValueArg(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitMaxValueArg(this);
   }
 
   @Override

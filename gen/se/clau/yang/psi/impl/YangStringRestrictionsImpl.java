@@ -17,8 +17,8 @@ public class YangStringRestrictionsImpl extends ASTWrapperPsiElement implements 
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitStringRestrictions(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitStringRestrictions(this);
   }
 
   @Override
@@ -28,15 +28,15 @@ public class YangStringRestrictionsImpl extends ASTWrapperPsiElement implements 
   }
 
   @Override
-  @NotNull
-  public List<YangLengthStmt> getLengthStmtList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, YangLengthStmt.class);
+  @Nullable
+  public YangLengthStmt getLengthStmt() {
+    return findChildByClass(YangLengthStmt.class);
   }
 
   @Override
-  @NotNull
-  public List<YangPatternStmt> getPatternStmtList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, YangPatternStmt.class);
+  @Nullable
+  public YangPatternStmt getPatternStmt() {
+    return findChildByClass(YangPatternStmt.class);
   }
 
 }

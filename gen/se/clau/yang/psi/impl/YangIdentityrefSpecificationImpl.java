@@ -17,8 +17,8 @@ public class YangIdentityrefSpecificationImpl extends ASTWrapperPsiElement imple
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitIdentityrefSpecification(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitIdentityrefSpecification(this);
   }
 
   @Override

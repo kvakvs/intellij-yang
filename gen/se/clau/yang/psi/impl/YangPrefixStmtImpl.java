@@ -17,8 +17,8 @@ public class YangPrefixStmtImpl extends ASTWrapperPsiElement implements YangPref
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitPrefixStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitPrefixStmt(this);
   }
 
   @Override
@@ -29,8 +29,8 @@ public class YangPrefixStmtImpl extends ASTWrapperPsiElement implements YangPref
 
   @Override
   @NotNull
-  public YangStmtend getStmtend() {
-    return findNotNullChildByClass(YangStmtend.class);
+  public YangEndStatement getEndStatement() {
+    return findNotNullChildByClass(YangEndStatement.class);
   }
 
   @Override

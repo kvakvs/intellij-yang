@@ -54,16 +54,19 @@
               language="Yang"
               extensions="yang"/>
     <lang.parserDefinition
-            language="Yang"
-            implementationClass="se.clau.yang.YangParserDefinition"/>
+        language="Yang"
+        implementationClass="se.clau.yang.YangParserDefinition"/>
     <lang.syntaxHighlighterFactory
-            language="Yang"
-            implementationClass="se.clau.yang.editor.YangSyntaxHighlighterFactory"/>
+        language="Yang"
+        implementationClass="se.clau.yang.editor.YangSyntaxHighlighterFactory"/>
     <colorSettingsPage
-            implementation="se.clau.yang.editor.YangColorSettingsPage"/>
+        implementation="se.clau.yang.editor.YangColorSettingsPage"/>
     <completion.contributor
-            language="Yang"
-            implementationClass="se.clau.yang.YangCompletionContributor"/>
+        language="Yang"
+        implementationClass="se.clau.yang.YangCompletionContributor"/>
+    <lang.foldingBuilder
+        language="Yang"
+        implementationClass="se.clau.yang.YangFoldingBuilder"/>
   </extensions>
 
   <actions>

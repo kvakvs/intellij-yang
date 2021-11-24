@@ -17,8 +17,8 @@ public class YangRevisionStmtsImpl extends ASTWrapperPsiElement implements YangR
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitRevisionStmts(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitRevisionStmts(this);
   }
 
   @Override

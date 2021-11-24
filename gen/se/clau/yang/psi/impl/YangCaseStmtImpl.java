@@ -17,8 +17,8 @@ public class YangCaseStmtImpl extends ASTWrapperPsiElement implements YangCaseSt
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitCaseStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitCaseStmt(this);
   }
 
   @Override

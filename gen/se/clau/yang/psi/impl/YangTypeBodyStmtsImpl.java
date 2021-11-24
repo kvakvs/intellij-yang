@@ -17,8 +17,8 @@ public class YangTypeBodyStmtsImpl extends ASTWrapperPsiElement implements YangT
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitTypeBodyStmts(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitTypeBodyStmts(this);
   }
 
   @Override
@@ -46,21 +46,15 @@ public class YangTypeBodyStmtsImpl extends ASTWrapperPsiElement implements YangT
   }
 
   @Override
-  @NotNull
-  public List<YangIdentifierStmt> getIdentifierStmtList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, YangIdentifierStmt.class);
+  @Nullable
+  public YangIdentifierStmt getIdentifierStmt() {
+    return findChildByClass(YangIdentifierStmt.class);
   }
 
   @Override
   @Nullable
   public YangIdentityrefSpecification getIdentityrefSpecification() {
     return findChildByClass(YangIdentityrefSpecification.class);
-  }
-
-  @Override
-  @Nullable
-  public YangInstanceIdentifierSpecification getInstanceIdentifierSpecification() {
-    return findChildByClass(YangInstanceIdentifierSpecification.class);
   }
 
   @Override
@@ -73,6 +67,12 @@ public class YangTypeBodyStmtsImpl extends ASTWrapperPsiElement implements YangT
   @Nullable
   public YangNumericalRestrictions getNumericalRestrictions() {
     return findChildByClass(YangNumericalRestrictions.class);
+  }
+
+  @Override
+  @Nullable
+  public YangRequireInstanceStmt getRequireInstanceStmt() {
+    return findChildByClass(YangRequireInstanceStmt.class);
   }
 
   @Override

@@ -17,8 +17,8 @@ public class YangLeafrefSpecificationImpl extends ASTWrapperPsiElement implement
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitLeafrefSpecification(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitLeafrefSpecification(this);
   }
 
   @Override

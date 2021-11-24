@@ -17,8 +17,8 @@ public class YangDeviateReplaceStmtImpl extends ASTWrapperPsiElement implements 
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitDeviateReplaceStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitDeviateReplaceStmt(this);
   }
 
   @Override

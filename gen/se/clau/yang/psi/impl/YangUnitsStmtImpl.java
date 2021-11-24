@@ -17,8 +17,8 @@ public class YangUnitsStmtImpl extends ASTWrapperPsiElement implements YangUnits
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitUnitsStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitUnitsStmt(this);
   }
 
   @Override
@@ -29,8 +29,8 @@ public class YangUnitsStmtImpl extends ASTWrapperPsiElement implements YangUnits
 
   @Override
   @NotNull
-  public YangStmtend getStmtend() {
-    return findNotNullChildByClass(YangStmtend.class);
+  public YangEndStatement getEndStatement() {
+    return findNotNullChildByClass(YangEndStatement.class);
   }
 
   @Override

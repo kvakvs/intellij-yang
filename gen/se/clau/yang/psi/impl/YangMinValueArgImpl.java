@@ -17,8 +17,8 @@ public class YangMinValueArgImpl extends ASTWrapperPsiElement implements YangMin
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitMinValueArg(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitMinValueArg(this);
   }
 
   @Override

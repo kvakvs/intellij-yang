@@ -17,8 +17,8 @@ public class YangRefineStmtImpl extends ASTWrapperPsiElement implements YangRefi
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitRefineStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitRefineStmt(this);
   }
 
   @Override
@@ -28,9 +28,63 @@ public class YangRefineStmtImpl extends ASTWrapperPsiElement implements YangRefi
   }
 
   @Override
-  @Nullable
-  public YangRefinePom getRefinePom() {
-    return findChildByClass(YangRefinePom.class);
+  @NotNull
+  public List<YangConfigStmt> getConfigStmtList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, YangConfigStmt.class);
+  }
+
+  @Override
+  @NotNull
+  public List<YangDefaultStmt> getDefaultStmtList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, YangDefaultStmt.class);
+  }
+
+  @Override
+  @NotNull
+  public List<YangDescriptionStmt> getDescriptionStmtList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, YangDescriptionStmt.class);
+  }
+
+  @Override
+  @NotNull
+  public List<YangIdentifierStmt> getIdentifierStmtList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, YangIdentifierStmt.class);
+  }
+
+  @Override
+  @NotNull
+  public List<YangMandatoryStmt> getMandatoryStmtList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, YangMandatoryStmt.class);
+  }
+
+  @Override
+  @NotNull
+  public List<YangMaxElementsStmt> getMaxElementsStmtList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, YangMaxElementsStmt.class);
+  }
+
+  @Override
+  @NotNull
+  public List<YangMinElementsStmt> getMinElementsStmtList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, YangMinElementsStmt.class);
+  }
+
+  @Override
+  @NotNull
+  public List<YangMustStmt> getMustStmtList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, YangMustStmt.class);
+  }
+
+  @Override
+  @NotNull
+  public List<YangPresenceStmt> getPresenceStmtList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, YangPresenceStmt.class);
+  }
+
+  @Override
+  @NotNull
+  public List<YangReferenceStmt> getReferenceStmtList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, YangReferenceStmt.class);
   }
 
   @Override

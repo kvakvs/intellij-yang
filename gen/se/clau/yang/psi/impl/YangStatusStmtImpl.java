@@ -17,8 +17,8 @@ public class YangStatusStmtImpl extends ASTWrapperPsiElement implements YangStat
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitStatusStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitStatusStmt(this);
   }
 
   @Override
@@ -29,14 +29,14 @@ public class YangStatusStmtImpl extends ASTWrapperPsiElement implements YangStat
 
   @Override
   @NotNull
-  public YangStatusArg getStatusArg() {
-    return findNotNullChildByClass(YangStatusArg.class);
+  public YangEndStatement getEndStatement() {
+    return findNotNullChildByClass(YangEndStatement.class);
   }
 
   @Override
   @NotNull
-  public YangStmtend getStmtend() {
-    return findNotNullChildByClass(YangStmtend.class);
+  public YangStatusArg getStatusArg() {
+    return findNotNullChildByClass(YangStatusArg.class);
   }
 
 }

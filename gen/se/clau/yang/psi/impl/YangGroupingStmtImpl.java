@@ -17,8 +17,8 @@ public class YangGroupingStmtImpl extends ASTWrapperPsiElement implements YangGr
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitGroupingStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitGroupingStmt(this);
   }
 
   @Override

@@ -17,8 +17,8 @@ public class YangAnyxmlStmtImpl extends ASTWrapperPsiElement implements YangAnyx
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitAnyxmlStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitAnyxmlStmt(this);
   }
 
   @Override

@@ -17,8 +17,8 @@ public class YangPatternStmtImpl extends ASTWrapperPsiElement implements YangPat
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitPatternStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitPatternStmt(this);
   }
 
   @Override

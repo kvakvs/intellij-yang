@@ -17,8 +17,8 @@ public class YangConfigArgImpl extends ASTWrapperPsiElement implements YangConfi
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitConfigArg(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitConfigArg(this);
   }
 
   @Override

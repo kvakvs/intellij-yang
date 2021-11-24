@@ -17,8 +17,8 @@ public class YangStringImpl extends ASTWrapperPsiElement implements YangString {
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitString(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitString(this);
   }
 
   @Override

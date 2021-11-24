@@ -17,8 +17,8 @@ public class YangBodyStmtsImpl extends ASTWrapperPsiElement implements YangBodyS
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitBodyStmts(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitBodyStmts(this);
   }
 
   @Override

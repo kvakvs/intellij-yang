@@ -17,8 +17,8 @@ public class YangImportStmtImpl extends ASTWrapperPsiElement implements YangImpo
     super(node);
   }
 
-  public void accept(@NotNull YangVisitor visitor) {
-    visitor.visitImportStmt(this);
+  public <R> R accept(@NotNull YangVisitor<R> visitor) {
+    return visitor.visitImportStmt(this);
   }
 
   @Override
