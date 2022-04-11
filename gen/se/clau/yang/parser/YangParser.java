@@ -1515,8 +1515,8 @@ public class YangParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // IDENTIFIER string? (end_statement | (LEFT_BRACE 
-  //   unknown_statement* 
+  // IDENTIFIER string? (end_statement | (LEFT_BRACE
+  //   unknown_statement*
   //   RIGHT_BRACE))
   public static boolean identifier_stmt(PsiBuilder builder, int level) {
     if (!recursion_guard_(builder, level, "identifier_stmt")) return false;
@@ -1537,8 +1537,8 @@ public class YangParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // end_statement | (LEFT_BRACE 
-  //   unknown_statement* 
+  // end_statement | (LEFT_BRACE
+  //   unknown_statement*
   //   RIGHT_BRACE)
   private static boolean identifier_stmt_2(PsiBuilder builder, int level) {
     if (!recursion_guard_(builder, level, "identifier_stmt_2")) return false;
@@ -1550,8 +1550,8 @@ public class YangParser implements PsiParser, LightPsiParser {
     return result;
   }
 
-  // LEFT_BRACE 
-  //   unknown_statement* 
+  // LEFT_BRACE
+  //   unknown_statement*
   //   RIGHT_BRACE
   private static boolean identifier_stmt_2_1(PsiBuilder builder, int level) {
     if (!recursion_guard_(builder, level, "identifier_stmt_2_1")) return false;
@@ -2597,7 +2597,7 @@ public class YangParser implements PsiParser, LightPsiParser {
 
   /* ********************************************************** */
   // RANGE_KEYWORD string (SEMICOLON | (LEFT_BRACE  
-  //   (identifier_stmt | error_message_stmt | error_app_tag_stmt | description_stmt | reference_stmt )* 
+  //   (identifier_stmt | error_message_stmt | error_app_tag_stmt | description_stmt | reference_stmt )*
   //   RIGHT_BRACE))
   public static boolean range_stmt(PsiBuilder builder, int level) {
     if (!recursion_guard_(builder, level, "range_stmt")) return false;
@@ -2612,7 +2612,7 @@ public class YangParser implements PsiParser, LightPsiParser {
   }
 
   // SEMICOLON | (LEFT_BRACE  
-  //   (identifier_stmt | error_message_stmt | error_app_tag_stmt | description_stmt | reference_stmt )* 
+  //   (identifier_stmt | error_message_stmt | error_app_tag_stmt | description_stmt | reference_stmt )*
   //   RIGHT_BRACE)
   private static boolean range_stmt_2(PsiBuilder builder, int level) {
     if (!recursion_guard_(builder, level, "range_stmt_2")) return false;
@@ -2625,7 +2625,7 @@ public class YangParser implements PsiParser, LightPsiParser {
   }
 
   // LEFT_BRACE  
-  //   (identifier_stmt | error_message_stmt | error_app_tag_stmt | description_stmt | reference_stmt )* 
+  //   (identifier_stmt | error_message_stmt | error_app_tag_stmt | description_stmt | reference_stmt )*
   //   RIGHT_BRACE
   private static boolean range_stmt_2_1(PsiBuilder builder, int level) {
     if (!recursion_guard_(builder, level, "range_stmt_2_1")) return false;
@@ -3415,7 +3415,7 @@ public class YangParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // (YIN_ELEMENT_KEYWORD | YANG_VERSION_KEYWORD | WHEN_KEYWORD
+  // (YIN_ELEMENT_KEYWORD | YANG_VERSION_KEYWORD | DESCRIPTION_KEYWORD | WHEN_KEYWORD
   //   | VALUE_KEYWORD | USES_KEYWORD | UNITS_KEYWORD | UNIQUE_KEYWORD | TYPEDEF_KEYWORD | TYPE_KEYWORD
   //   | SUBMODULE_KEYWORD | RPC_KEYWORD | REVISION_DATE_KEYWORD | REVISION_KEYWORD | REQUIRE_INSTANCE_KEYWORD
   //   | REFINE_KEYWORD | RANGE_KEYWORD | PRESENCE_KEYWORD | PREFIX_KEYWORD | POSITION_KEYWORD
@@ -3439,7 +3439,7 @@ public class YangParser implements PsiParser, LightPsiParser {
     return result;
   }
 
-  // YIN_ELEMENT_KEYWORD | YANG_VERSION_KEYWORD | WHEN_KEYWORD
+  // YIN_ELEMENT_KEYWORD | YANG_VERSION_KEYWORD | DESCRIPTION_KEYWORD | WHEN_KEYWORD
   //   | VALUE_KEYWORD | USES_KEYWORD | UNITS_KEYWORD | UNIQUE_KEYWORD | TYPEDEF_KEYWORD | TYPE_KEYWORD
   //   | SUBMODULE_KEYWORD | RPC_KEYWORD | REVISION_DATE_KEYWORD | REVISION_KEYWORD | REQUIRE_INSTANCE_KEYWORD
   //   | REFINE_KEYWORD | RANGE_KEYWORD | PRESENCE_KEYWORD | PREFIX_KEYWORD | POSITION_KEYWORD
@@ -3456,6 +3456,7 @@ public class YangParser implements PsiParser, LightPsiParser {
     boolean result;
     result = consumeToken(builder, YANG_YIN_ELEMENT_KEYWORD);
     if (!result) result = consumeToken(builder, YANG_YANG_VERSION_KEYWORD);
+    if (!result) result = consumeToken(builder, YANG_DESCRIPTION_KEYWORD);
     if (!result) result = consumeToken(builder, YANG_WHEN_KEYWORD);
     if (!result) result = consumeToken(builder, YANG_VALUE_KEYWORD);
     if (!result) result = consumeToken(builder, YANG_USES_KEYWORD);
