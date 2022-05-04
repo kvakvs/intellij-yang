@@ -1,7 +1,7 @@
 {
   generate=[java="11" names="long" visitor-value="R"]
   parserClass="se.clau.yang.parser.YangParser"
-  parserUtilClass="se.clau.yang.parser.YangParserUtil"
+//  parserUtilClass="se.clau.yang.parser.YangParserUtil"
   parserImports=["static se.clau.yang.parser.*"]
 
   extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
