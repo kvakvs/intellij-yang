@@ -1,8 +1,8 @@
 plugins {
     idea
     java
-    id("org.jetbrains.kotlin.jvm") version "1.6.20"
-    id("org.jetbrains.intellij") version "1.5.3"
+    id("org.jetbrains.kotlin.jvm") version "1.8.20"
+    id("org.jetbrains.intellij") version "1.13.3"
     id("org.jetbrains.grammarkit") version "2021.1.2"
 }
 

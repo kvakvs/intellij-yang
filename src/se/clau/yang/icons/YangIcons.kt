@@ -18,5 +18,5 @@ package se.clau.yang.icons
 import com.intellij.openapi.util.IconLoader
 
 object YangIcons {
-    @JvmField val FILE = IconLoader.getIcon("/icons/yang-16x16.png")
+    @JvmField val FILE = IconLoader.getIcon("/icons/yang-16x16.png", this.javaClass.classLoader)
 }
