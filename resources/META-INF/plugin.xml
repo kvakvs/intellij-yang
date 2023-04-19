@@ -34,7 +34,9 @@
     ]]></description>
 
   <change-notes><![CDATA[
-    Reviving the old abandoned project from 2014. Supports Yang 1.0, updated for Yang 1.1 with some new features.
+    * Matching braces support for { and } tokens
+    * Bump support to IntelliJ platform 2023
+    * Reviving the old abandoned project from 2014. Supports Yang 1.0, updated for Yang 1.1 with some new features.
     ]]>
   </change-notes>
 
@@ -67,6 +69,7 @@
     <lang.foldingBuilder
         language="Yang"
         implementationClass="se.clau.yang.YangFoldingBuilder"/>
+    <lang.braceMatcher language="Yang" implementationClass="se.clau.YangBraceMatcher"/>
   </extensions>
 
   <actions>

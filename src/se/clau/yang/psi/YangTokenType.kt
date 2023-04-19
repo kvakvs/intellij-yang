@@ -17,7 +17,10 @@ package se.clau.yang.psi
 
 import se.clau.yang.YangLanguage
 import com.intellij.psi.tree.IElementType
+import com.intellij.psi.tree.TokenSet
 import org.jetbrains.annotations.NonNls
+
+fun tokenSetOf(vararg tokens: IElementType) = TokenSet.create(*tokens)
 
 class YangTokenType(@NonNls debugName: String) :
     IElementType(debugName, YangLanguage.INSTANCE) {
